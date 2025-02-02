@@ -23,7 +23,13 @@ const Footer = ({
     <footer className="bg-slate-900 text-gray-300">
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-xl font-bold text-white">{logo}</div>
+          <div>
+            <div className="flex items-center text-3xl font-bold">
+              <span className="text-white">KB</span>
+              <span className="text-[#E31E24]">C</span>
+              <span className="text-[#E31E24]">.</span>
+            </div>
+          </div>
 
           <div className="flex items-center space-x-4">
             {socialLinks.map((link, index) => (

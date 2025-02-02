@@ -1,11 +1,10 @@
 import React from "react";
 import { Button } from "../ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 
 interface NavbarProps {
   onRegisterClick?: () => void;
-  logo?: string;
   menuItems?: Array<{
     label: string;
     href: string;
@@ -14,7 +13,6 @@ interface NavbarProps {
 
 const Navbar = ({
   onRegisterClick = () => {},
-  logo = "Kolkata Business Club",
   menuItems = [
     { label: "Home", href: "#" },
     { label: "Features", href: "#features" },
@@ -26,8 +24,12 @@ const Navbar = ({
         <div className="flex items-center justify-between h-full">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="#" className="text-2xl font-bold text-blue-900">
-              {logo}
+            <a href="#" className="block">
+              <div className="flex items-center text-3xl md:text-4xl font-bold">
+                <span className="text-[#0A2558]">KB</span>
+                <span className="text-[#E31E24]">C</span>
+                <span className="text-[#E31E24]">.</span>
+              </div>
             </a>
           </div>
 
@@ -37,14 +39,14 @@ const Navbar = ({
               <a
                 key={index}
                 href={item.href}
-                className="text-gray-600 hover:text-blue-900 transition-colors"
+                className="text-[#0A2558] hover:text-[#E31E24] transition-colors font-medium"
               >
                 {item.label}
               </a>
             ))}
             <Button
               onClick={onRegisterClick}
-              className="bg-blue-900 hover:bg-blue-800 text-white"
+              className="bg-[#E31E24] hover:bg-[#0A2558] text-white transition-colors"
             >
               Join Waitlist
             </Button>
@@ -64,14 +66,14 @@ const Navbar = ({
                     <a
                       key={index}
                       href={item.href}
-                      className="text-gray-600 hover:text-blue-900 transition-colors py-2"
+                      className="text-[#0A2558] hover:text-[#E31E24] transition-colors font-medium py-2"
                     >
                       {item.label}
                     </a>
                   ))}
                   <Button
                     onClick={onRegisterClick}
-                    className="bg-blue-900 hover:bg-blue-800 text-white w-full"
+                    className="bg-[#E31E24] hover:bg-[#0A2558] text-white w-full transition-colors"
                   >
                     Join Waitlist
                   </Button>
