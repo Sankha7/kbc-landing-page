@@ -12,7 +12,8 @@ import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
 import { useForm } from "react-hook-form";
-import { toast } from "../ui/use-toast";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   Select,
   SelectContent,
@@ -20,6 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
+import {supabase} from "../../lib/supabase"; 
 
 interface RegistrationDialogProps {
   open?: boolean;
@@ -27,16 +29,16 @@ interface RegistrationDialogProps {
 }
 
 interface FormData {
-  firstName: string;
-  lastName: string;
+  first_name: string;
+  last_name: string;
   email: string;
   company: string;
-  businessType: string;
+  business_type: string;
   about: string;
 }
 
 const RegistrationDialog = ({
-  open = true,
+  open,
   onOpenChange,
 }: RegistrationDialogProps) => {
   const {
@@ -46,33 +48,27 @@ const RegistrationDialog = ({
     formState: { errors },
   } = useForm<FormData>();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
   const onSubmit = async (data: FormData) => {
+    const submissionData = { ...data, business_type: selectedOption };
     setIsSubmitting(true);
     try {
-      // Store in localStorage
-      const existingData = JSON.parse(localStorage.getItem("waitlist") || "[]");
-      existingData.push({ ...data, submittedAt: new Date().toISOString() });
-      localStorage.setItem("waitlist", JSON.stringify(existingData));
+      const { data: response, error } = await supabase
+        .from("registrations")
+        .insert([submissionData]);
 
-      // Show success message
-      toast({
-        title: "Successfully joined waitlist!",
-        description: "We'll notify you when the app launches.",
-      });
-
-      // Close dialog and reset form
-      reset();
-      onOpenChange?.(false);
+      if (error) {
+        toast.error("Failed to join waitlist");
+      } else {
+        toast.success("Successfully join waitlist");
+        reset();
+      }
     } catch (error) {
-      console.error("Error:", error);
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive",
-      });
+      toast.error("Failed to join waitlist2");
     } finally {
       setIsSubmitting(false);
+      onOpenChange(false);
     }
   };
 
@@ -93,34 +89,34 @@ const RegistrationDialog = ({
           <div className="grid gap-6 py-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="firstName">First Name</Label>
+                <Label htmlFor="first_name">First Name</Label>
                 <Input
-                  id="firstName"
+                  id="first_name"
                   placeholder="John"
-                  {...register("firstName", {
+                  {...register("first_name", {
                     required: "First name is required",
                   })}
-                  className={errors.firstName ? "border-red-500" : ""}
+                  className={errors.first_name ? "border-red-500" : ""}
                 />
-                {errors.firstName && (
+                {errors.first_name && (
                   <p className="text-red-500 text-sm">
-                    {errors.firstName.message}
+                    {errors.first_name.message}
                   </p>
                 )}
               </div>
               <div className="space-y-2">
-                <Label htmlFor="lastName">Last Name</Label>
+                <Label htmlFor="last_name">Last Name</Label>
                 <Input
-                  id="lastName"
+                  id="last_name"
                   placeholder="Doe"
-                  {...register("lastName", {
+                  {...register("last_name", {
                     required: "Last name is required",
                   })}
-                  className={errors.lastName ? "border-red-500" : ""}
+                  className={errors.last_name ? "border-red-500" : ""}
                 />
-                {errors.lastName && (
+                {errors.last_name && (
                   <p className="text-red-500 text-sm">
-                    {errors.lastName.message}
+                    {errors.last_name.message}
                   </p>
                 )}
               </div>
@@ -162,15 +158,14 @@ const RegistrationDialog = ({
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="businessType">Business Type</Label>
+              <Label htmlFor="business_type">Business Type</Label>
               <Select
-                {...register("businessType", {
-                  required: "Business type is required",
-                })}
-                defaultValue="corporate"
+                {...register("business_type")}
+                value={selectedOption}
+                onValueChange={(value) => setSelectedOption(value)}
               >
                 <SelectTrigger
-                  className={errors.businessType ? "border-red-500" : ""}
+                  className={errors.business_type ? "border-red-500" : ""}
                 >
                   <SelectValue placeholder="Select business type" />
                 </SelectTrigger>
@@ -181,11 +176,11 @@ const RegistrationDialog = ({
                   <SelectItem value="consultant">Consultant</SelectItem>
                 </SelectContent>
               </Select>
-              {errors.businessType && (
+              {/* {errors.business_type && (
                 <p className="text-red-500 text-sm">
-                  {errors.businessType.message}
+                  {errors.business_type?.message}
                 </p>
-              )}
+              )} */}
             </div>
 
             <div className="space-y-2">
@@ -227,3 +222,4 @@ const RegistrationDialog = ({
 };
 
 export default RegistrationDialog;
+
