@@ -5,7 +5,7 @@ import FeaturesSection from "./landing/FeaturesSection";
 import StatsSection from "./landing/StatsSection";
 
 import Footer from "./landing/Footer";
-
+import { ToastContainer } from 'react-toastify';
 import RegistrationDialog from "./landing/RegistrationDialog";
 
 const Home = () => {
@@ -17,6 +17,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <ToastContainer/>
       <Navbar onRegisterClick={handleRegistrationClick} />
 
       {/* Add margin-top to account for fixed navbar */}
