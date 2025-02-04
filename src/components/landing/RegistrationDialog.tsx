@@ -61,11 +61,27 @@ const RegistrationDialog = ({
       if (error) {
         toast.error("Failed to join waitlist");
       } else {
-        toast.success("Successfully join waitlist");
+        const apiResponse = await fetch("https://projects.dotlinkertech.com/kbc-test-server/public/api/join-waitlist", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: data.first_name,
+            email: data.email
+          }),
+        });
+
+        if (!apiResponse.ok) {
+          throw new Error("Failed to call external API");
+        }
+
+        toast.success("Successfully joined waitlist");
         reset();
       }
     } catch (error) {
-      toast.error("Failed to join waitlist2");
+      toast.error("Failed to join waitlist");
+      console.log("response", error);
     } finally {
       setIsSubmitting(false);
       onOpenChange(false);
