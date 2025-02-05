@@ -13,10 +13,10 @@ interface FooterProps {
 const Footer = ({
   logo = "Kolkata Business Club",
   socialLinks = [
-    { icon: <Facebook className="w-5 h-5" />, href: "#" },
-    { icon: <Twitter className="w-5 h-5" />, href: "#" },
-    { icon: <Linkedin className="w-5 h-5" />, href: "#" },
-    { icon: <Instagram className="w-5 h-5" />, href: "#" },
+    // { icon: <Facebook className="w-5 h-5" />, href: "#" },
+    // { icon: <Twitter className="w-5 h-5" />, href: "#" },
+    { icon: <Linkedin className="w-5 h-5" />, href: "https://www.linkedin.com/company/the-kolkata-business-club/" },
+    // { icon: <Instagram className="w-5 h-5" />, href: "#" },
   ],
 }: FooterProps) => {
   return (
@@ -53,14 +53,14 @@ const Footer = ({
             © {new Date().getFullYear()} Kolkata Business Club. All rights
             reserved.
           </div>
-          <div className="flex gap-6">
+          {/* <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">
               Privacy Policy
             </a>
             <a href="#" className="hover:text-white transition-colors">
               Terms of Service
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
