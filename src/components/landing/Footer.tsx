@@ -16,7 +16,7 @@ const Footer = ({
     // { icon: <Facebook className="w-5 h-5" />, href: "#" },
     // { icon: <Twitter className="w-5 h-5" />, href: "#" },
     { icon: <Linkedin className="w-5 h-5" />, href: "https://www.linkedin.com/company/the-kolkata-business-club/" },
-    // { icon: <Instagram className="w-5 h-5" />, href: "#" },
+    { icon: <Instagram className="w-5 h-5" />, href: "https://www.instagram.com/kolkatabusinessclub/" },
   ],
 }: FooterProps) => {
   return (
