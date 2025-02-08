@@ -14,8 +14,10 @@ interface NavbarProps {
 const Navbar = ({
   onRegisterClick = () => {},
   menuItems = [
-    { label: "Home", href: "#" },
-    { label: "Features", href: "#features" },
+    { label: "Home", href: "/" },
+    { label: "Blogs", href: "/blogs" },
+    { label: "Contact", href: "/contact" },
+    { label: "About", href: "/about" },
   ],
 }: NavbarProps) => {
   return (
@@ -24,7 +26,7 @@ const Navbar = ({
         <div className="flex items-center justify-between h-full">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="#" className="block">
+            <a href="/" className="block">
               <div className="flex items-center text-3xl md:text-4xl font-bold">
                 <span className="text-[#0A2558]">KB</span>
                 <span className="text-[#E31E24]">C</span>

@@ -60,7 +60,10 @@ const StatsSection = ({ stats = defaultStats }: StatsSectionProps) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat) => (
-            <Card key={stat.id} className="p-6 bg-white text-center">
+            <Card
+              key={stat.id}
+              className="p-6 text-center bg-white rounded-lg shadow hover:shadow-lg transition-all cursor-pointer"
+            >
               <div className="flex flex-col items-center space-y-4">
                 <div className="p-3 rounded-full bg-blue-50">{stat.icon}</div>
                 <div>
@@ -84,3 +87,4 @@ const StatsSection = ({ stats = defaultStats }: StatsSectionProps) => {
 };
 
 export default StatsSection;
+

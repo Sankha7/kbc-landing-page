@@ -22,10 +22,14 @@ const FeatureCard = ({
   description = "Feature description goes here",
 }: FeatureCardProps) => {
   return (
-    <Card className="h-full bg-white">
+    <Card
+      className="h-full bg-white hover:shadow-lg transition-all duration-200 cursor-pointer"
+    >
       <CardContent className="pt-6">
         <div className="flex flex-col items-center text-center space-y-4">
-          <div className="p-3 rounded-full bg-blue-100">{icon}</div>
+          <div className="p-3 rounded-full bg-blue-100 hover:bg-blue-200">
+            {icon}
+          </div>
           <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
           <p className="text-gray-600">{description}</p>
         </div>
@@ -114,3 +118,4 @@ const FeaturesSection = ({
 };
 
 export default FeaturesSection;
+
