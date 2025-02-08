@@ -6,11 +6,32 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-
 <url>
   <loc>https://kolkatabusinessclub.com/</loc>
-  <lastmod>2025-02-05T07:49:26+00:00</lastmod>
+  <lastmod>2025-02-08T07:49:26+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>1.0</priority>
 </url>
 
+<url>
+  <loc>https://kolkatabusinessclub.com/blogs</loc>
+  <lastmod>2025-02-08T07:49:26+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://kolkatabusinessclub.com/contact</loc>
+  <lastmod>2025-02-08T07:49:26+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://kolkatabusinessclub.com/about</loc>
+  <lastmod>2025-02-08T07:49:26+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
 
 </urlset>
