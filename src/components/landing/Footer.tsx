@@ -63,7 +63,7 @@ const Footer = ({
           </div> */}
           <div className="flex gap-6">
             <a href="/contact" className="hover:text-white transition-colors">
-              Contuct Us
+              Contact Us
             </a>
             <a href="/about" className="hover:text-white transition-colors">
               About Us

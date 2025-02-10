@@ -228,7 +228,7 @@ const RegistrationDialog = ({
               className="bg-[#E31E24] text-white hover:bg-[#0A2558]"
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Submitting..." : "Submit Registration"}
+              {isSubmitting ? "Submitting..." : "Join Waitlist"}
             </Button>
           </DialogFooter>
         </form>
