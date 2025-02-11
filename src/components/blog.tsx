@@ -19,7 +19,7 @@ const Blog = () => {
       <Navbar onRegisterClick={handleRegistrationClick} />
 
       {/* Add margin-top to account for fixed navbar */}
-      <main className="">
+      <main className="mt-10">
         <BlogsSection/>
       </main>
 

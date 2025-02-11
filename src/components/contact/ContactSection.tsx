@@ -42,7 +42,7 @@ export const ContactSection = () => {
   return (
     <section className="bg-gray-100 py-20">
       <div className="container mx-auto p-6">
-        <h2 className="text-4xl font-bold mb-4">Get in Touch <Send className="inline-block ml-2" /></h2>
+        <h2 className="text-4xl font-bold mb-4">Get in Touch </h2>
         <p className="mb-10">
           Have a question, feedback, or just want to say hi? Fill out the form below and I'll get back to you as soon as possible.
         </p>
@@ -103,7 +103,7 @@ export const ContactSection = () => {
             </div>
             <div className="mt-4 text-center">
               <button type="submit" className="bg-primary text-white px-4 py-2 rounded flex items-center justify-center hover:bg-primary/90 transition-colors text-sm">
-                <Send className="mr-2" /> Send Message
+                Send Message
               </button>
             </div>
           </form>
