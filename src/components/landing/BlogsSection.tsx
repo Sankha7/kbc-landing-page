@@ -48,7 +48,7 @@ const blogData = [
     title: "Financing options for Kolkata businesses",
     description:
       "Securing financing is often a major challenge. This blog explores various financing options available for businesses in Kolkata.",
-    href: "https://www.linkedin.com/company/the-kolkata-business-club/",
+    href: "https://www.linkedin.com/posts/the-kolkata-business-club_financing-options-for-kolkata-businesses-activity-7295730175369977860-g3zE?utm_source=share&utm_medium=member_desktop",
     date: "June 27, 2024",
   },
 ];
