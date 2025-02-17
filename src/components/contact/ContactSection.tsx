@@ -31,6 +31,11 @@ export const ContactSection = () => {
               width: "280px",
             },
           });
+
+          setNameValue("");
+          setEmailValue("");
+          setPhoneValue("");
+          setMessageValue("");
         }
       
     } catch (error) {

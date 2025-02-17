@@ -37,15 +37,20 @@ const Navbar = ({
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            {menuItems.map((item, index) => (
-              <a
-                key={index}
-                href={item.href}
-                className="text-[#0A2558] hover:text-[#E31E24] transition-colors font-medium"
-              >
-                {item.label}
-              </a>
-            ))}
+            {menuItems.map((item, index) => {
+              const isActive = window.location.pathname === item.href;
+              return (
+                <a
+                  key={index}
+                  href={item.href}
+                  className={`text-[#0A2558] hover:text-[#E31E24] transition-colors font-medium ${
+                    isActive ? "text-[#E31E24]" : ""
+                  }`}
+                >
+                  {item.label}
+                </a>
+              );
+            })}
             <Button
               onClick={onRegisterClick}
               className="bg-[#E31E24] hover:bg-[#0A2558] text-white transition-colors"

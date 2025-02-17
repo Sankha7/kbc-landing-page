@@ -16,9 +16,7 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      <ToastContainer/>
-      <Navbar onRegisterClick={handleRegistrationClick} />
+    <>
 
       {/* Add margin-top to account for fixed navbar */}
       <main className="pt-20">
@@ -27,13 +25,11 @@ const Home = () => {
         <StatsSection />
       </main>
 
-      <Footer />
-
       <RegistrationDialog
         open={isRegistrationOpen}
         onOpenChange={setIsRegistrationOpen}
       />
-    </div>
+    </>
   );
 };
 

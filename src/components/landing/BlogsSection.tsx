@@ -32,7 +32,7 @@ const blogData = [
     title: "Legal requirements for businesses in Kolkata",
     description:
       "Understanding the legal requirements for setting up a business in Kolkata is crucial. This blog will guide you through the necessary steps and documentation.",
-    href: "https://www.linkedin.com/company/the-kolkata-business-club/",
+    href: "https://www.linkedin.com/posts/the-kolkata-business-club_legal-requirements-for-businesses-in-kolkata-activity-7296452832692420608-BXcZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUujqwBsG2kp2EZCCbymbDFwW_pTqKfqzohttps://www.linkedin.com/posts/the-kolkata-business-club_legal-requirements-for-businesses-in-kolkata-activity-7296452832692420608-BXcZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUujqwBsG2kp2EZCCbymbDFwW_pTqKfqzohttps://www.linkedin.com/posts/the-kolkata-business-club_legal-requirements-for-businesses-in-kolkata-activity-7296452832692420608-BXcZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUujqwBsG2kp2EZCCbymbDFwW_pTqKfqzo",
     date: "June 21, 2024",
   },
   {

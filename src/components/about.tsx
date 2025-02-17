@@ -7,29 +7,14 @@ import RegistrationDialog from "./landing/RegistrationDialog";
 import AboutSection from "./about/AboutSection";
 
 const About = () => {
-  const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
-
-  const handleRegistrationClick = () => {
-    setIsRegistrationOpen(true);
-  };
 
   return (
-    <div className="min-h-screen bg-white">
-      <ToastContainer/>
-      <Navbar onRegisterClick={handleRegistrationClick} />
-
+    <>
       {/* Add margin-top to account for fixed navbar */}
-      <main className="">
+      <main>
         <AboutSection/>
       </main>
-
-      <Footer />
-
-      <RegistrationDialog
-        open={isRegistrationOpen}
-        onOpenChange={setIsRegistrationOpen}
-      />
-    </div>
+    </>
   );
 };
 

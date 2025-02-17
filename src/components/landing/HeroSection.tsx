@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import  homePageBackgroundImage  from "../../../public/homepageImg.jpeg";
+import  homePageBackgroundImage  from "/homepageImg.jpeg";
 
 interface HeroSectionProps {
   title?: string;
