@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "../ui/button";
 import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
+import { Link, NavLink } from "react-router-dom";
 
 interface NavbarProps {
   onRegisterClick?: () => void;
@@ -26,29 +27,31 @@ const Navbar = ({
         <div className="flex items-center justify-between h-full">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="/" className="block">
+            <Link to="/" className="block">
               <div className="flex items-center text-3xl md:text-4xl font-bold">
                 <span className="text-[#0A2558]">KB</span>
                 <span className="text-[#E31E24]">C</span>
                 <span className="text-[#E31E24]">.</span>
               </div>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {menuItems.map((item, index) => {
-              const isActive = window.location.pathname === item.href;
+              
               return (
-                <a
+                <NavLink
                   key={index}
-                  href={item.href}
-                  className={`text-[#0A2558] hover:text-[#E31E24] transition-colors font-medium ${
-                    isActive ? "text-[#E31E24]" : ""
-                  }`}
+                  to={item.href}
+                  className={({ isActive }) =>
+                    `text-[#0A2558] hover:text-[#E31E24] transition-colors font-medium ${
+                      isActive ? "text-[#E31E24]" : ""
+                    }`
+                  }
                 >
                   {item.label}
-                </a>
+                </NavLink>
               );
             })}
             <Button
@@ -70,13 +73,13 @@ const Navbar = ({
               <SheetContent className="w-[300px] sm:w-[400px]">
                 <div className="flex flex-col space-y-4 mt-8">
                   {menuItems.map((item, index) => (
-                    <a
+                    <Link
                       key={index}
-                      href={item.href}
+                      to={item.href}
                       className="text-[#0A2558] hover:text-[#E31E24] transition-colors font-medium py-2"
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   ))}
                   <Button
                     onClick={onRegisterClick}

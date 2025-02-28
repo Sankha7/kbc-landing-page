@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import  homePageBackgroundImage  from "/homepageImg.jpeg";
+import { Link } from "react-router-dom";
 
 interface HeroSectionProps {
   title?: string;
@@ -61,8 +62,8 @@ const HeroSection = ({
                 </p>
               </div>
               <div className="flex items-center gap-4 opacity-80 hover:opacity-100 transition-opacity duration-300">
-                <a
-                  href={appStoreUrl}
+                <Link
+                  to={appStoreUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transform hover:scale-105 transition-transform duration-300"
@@ -72,9 +73,9 @@ const HeroSection = ({
                     alt="Download on App Store"
                     className="h-10"
                   />
-                </a>
-                <a
-                  href={playStoreUrl}
+                </Link>
+                <Link
+                  to={playStoreUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transform hover:scale-105 transition-transform duration-300"
@@ -84,7 +85,7 @@ const HeroSection = ({
                     alt="Get it on Google Play"
                     className="h-10"
                   />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

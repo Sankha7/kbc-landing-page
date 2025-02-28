@@ -24,7 +24,7 @@ const blogData = [
     title: "How to market your business in Kolkata",
     description:
       "Marketing your business in Kolkata can be a challenging task, but with the right strategy, it can be a successful venture. In this blog, we will provide you with some tips and tricks.",
-    href: "https://www.linkedin.com/company/the-kolkata-business-club/",
+    href: "https://www.linkedin.com/posts/the-kolkata-business-club_kolkataentrepreneurs-startupcommunity-businessnetwork-activity-7301161033799233536-lrsI?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUujqwBsG2kp2EZCCbymbDFwW_pTqKfqzo",
     date: "June 18, 2024",
   },
   {
@@ -40,7 +40,7 @@ const blogData = [
     title: "Networking opportunities in Kolkata",
     description:
       "Networking is key to business success. Discover the best networking opportunities in Kolkata through this blog.",
-    href: "https://www.linkedin.com/company/the-kolkata-business-club/",
+    href: "https://www.linkedin.com/posts/the-kolkata-business-club_unlocking-networking-opportunities-in-kolkata-activity-7298325297408446464-v4So?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUujqwBsG2kp2EZCCbymbDFwW_pTqKfqzo",
     date: "June 24, 2024",
   },
   {
@@ -55,7 +55,7 @@ const blogData = [
 
 const BlogsSection = () => {
   return (
-    <section className="py-20 bg-gray-100">
+    <section className="py-20 bg-gray-100 mt-10">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-10">Blogs</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

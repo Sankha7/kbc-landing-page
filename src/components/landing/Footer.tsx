@@ -1,6 +1,7 @@
 import React from "react";
 import { Separator } from "@/components/ui/separator";
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface FooterProps {
   logo?: string;
@@ -33,15 +34,15 @@ const Footer = ({
 
           <div className="flex items-center space-x-4">
             {socialLinks.map((link, index) => (
-              <a
+              <Link
                 key={index}
-                href={link.href}
+                to={link.href}
                 className="hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 {link.icon}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -54,20 +55,20 @@ const Footer = ({
             reserved.
           </div>
           {/* <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">
+            <Link to="#" className="hover:text-white transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
+            </Link>
+            <Link to="#" className="hover:text-white transition-colors">
               Terms of Service
-            </a>
+            </Link>
           </div> */}
           <div className="flex gap-6">
-            <a href="/contact" className="hover:text-white transition-colors">
+            <Link to="/contact" className="hover:text-white transition-colors">
               Contact Us
-            </a>
-            <a href="/about" className="hover:text-white transition-colors">
+            </Link>
+            <Link to="/about" className="hover:text-white transition-colors">
               About Us
-            </a>
+            </Link>
           </div>
         </div>
       </div>
