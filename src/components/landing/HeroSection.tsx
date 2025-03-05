@@ -21,7 +21,6 @@ const HeroSection = ({
   ctaText = "Join Waitlist",
   onCtaClick = () => {},
   backgroundImage = homePageBackgroundImage,
-  // backgroundImage = "https://images.unsplash.com/photo-1558431382-27e303142255?q=80&w=2070&auto=format&fit=crop",
 }: HeroSectionProps) => {
   return (
     <div className="relative h-[500px] w-full bg-slate-900 overflow-hidden">

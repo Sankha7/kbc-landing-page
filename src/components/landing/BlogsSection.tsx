@@ -16,7 +16,7 @@ const blogData = [
     title: "How to grow your business in Kolkata",
     description:
       "Growing a business in Kolkata requires a strategic approach. In this blog, we will provide you with some tips and tricks to help you grow your business. We will cover all the marketing strategy and tactics.",
-    href: "https://www.linkedin.com/company/the-kolkata-business-club/",
+    href: "https://www.linkedin.com/posts/the-kolkata-business-club_how-to-grow-your-business-in-kolkata-visit-activity-7302894328580890624-UD-f?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUujqwBsG2kp2EZCCbymbDFwW_pTqKfqzo",
     date: "June 15, 2024",
   },
   {
