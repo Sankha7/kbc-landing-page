@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 
 const blogData = [
   {
-    image: "/images/start-business.jpg",
+    image: "/images/start-business.webp",
     title: "How to start a business in Kolkata",
     description:
       "Starting a business in Kolkata can be a challenging task, but with the right guidance, it can be a successful venture. In this blog, we will provide you with some tips and tricks to help you get started. We will cover all the legal requirements and registration process.",
@@ -12,7 +12,7 @@ const blogData = [
     date: "June 12, 2024",
   },
   {
-    image: "/images/grow-business.jpg",
+    image: "/images/grow-business.webp",
     title: "How to grow your business in Kolkata",
     description:
       "Growing a business in Kolkata requires a strategic approach. In this blog, we will provide you with some tips and tricks to help you grow your business. We will cover all the marketing strategy and tactics.",
@@ -20,7 +20,7 @@ const blogData = [
     date: "June 15, 2024",
   },
   {
-    image: "/images/market-business.jpg",
+    image: "/images/market-business.webp",
     title: "How to market your business in Kolkata",
     description:
       "Marketing your business in Kolkata can be a challenging task, but with the right strategy, it can be a successful venture. In this blog, we will provide you with some tips and tricks.",
@@ -28,7 +28,7 @@ const blogData = [
     date: "June 18, 2024",
   },
   {
-    image: "/images/legal-requirements.jpg",
+    image: "/images/legal-requirements.webp",
     title: "Legal requirements for businesses in Kolkata",
     description:
       "Understanding the legal requirements for setting up a business in Kolkata is crucial. This blog will guide you through the necessary steps and documentation.",
@@ -36,7 +36,7 @@ const blogData = [
     date: "June 21, 2024",
   },
   {
-    image: "/images/networking-opportunities.jpg",
+    image: "/images/networking-opportunities.webp",
     title: "Networking opportunities in Kolkata",
     description:
       "Networking is key to business success. Discover the best networking opportunities in Kolkata through this blog.",
@@ -44,7 +44,7 @@ const blogData = [
     date: "June 24, 2024",
   },
   {
-    image: "/images/financing-options.jpg",
+    image: "/images/financing-options.webp",
     title: "Financing options for Kolkata businesses",
     description:
       "Securing financing is often a major challenge. This blog explores various financing options available for businesses in Kolkata.",

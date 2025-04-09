@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import  homePageBackgroundImage  from "/homepageImg.jpeg";
+import  homePageBackgroundImage  from "/images/homepageImg.webp";
 import { Link } from "react-router-dom";
 
 interface HeroSectionProps {

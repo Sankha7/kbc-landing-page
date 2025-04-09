@@ -27,7 +27,7 @@ const AboutSection = () => {
         {/* Image */}
         <div className="lg:w-1/2 w-full mb-8 lg:mb-0">
           <img
-            src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42"
+            src="/images/about.webp"
             alt="Unlock Exclusive Benefits and Opportunities to Grow Your Business Network"
             className="w-full h-auto object-cover rounded-lg shadow-md"
           />
