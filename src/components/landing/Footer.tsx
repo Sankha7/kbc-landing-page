@@ -14,8 +14,6 @@ interface FooterProps {
 const Footer = ({
   logo = "Kolkata Business Club",
   socialLinks = [
-    // { icon: <Facebook className="w-5 h-5" />, href: "#" },
-    // { icon: <Twitter className="w-5 h-5" />, href: "#" },
     { icon: <Linkedin className="w-5 h-5" />, href: "https://www.linkedin.com/company/the-kolkata-business-club/" },
     { icon: <Instagram className="w-5 h-5" />, href: "https://www.instagram.com/kolkatabusinessclub/" },
   ],
@@ -54,20 +52,15 @@ const Footer = ({
             © {new Date().getFullYear()} Kolkata Business Club. All rights
             reserved.
           </div>
-          {/* <div className="flex gap-6">
-            <Link to="#" className="hover:text-white transition-colors">
-              Privacy Policy
-            </Link>
-            <Link to="#" className="hover:text-white transition-colors">
-              Terms of Service
-            </Link>
-          </div> */}
           <div className="flex gap-6">
             <Link to="/contact" className="hover:text-white transition-colors">
               Contact Us
             </Link>
             <Link to="/about" className="hover:text-white transition-colors">
               About Us
+            </Link>
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">
+              Privacy Policy
             </Link>
           </div>
         </div>

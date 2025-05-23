@@ -9,6 +9,7 @@ import { ContactSection } from "./components/contact/ContactSection.js";
 import BlogsSection from "./components/landing/BlogsSection.js";
 import AboutSection from "./components/about/AboutSection.js";
 import NotFound from "./components/notFound.js";
+import Privacy from "./components/privacy.tsx";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/contact" element={<ContactSection />} />
           <Route path="/about" element={<AboutSection />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/privacy-policy" element={<Privacy />} />
         </Route>
       </Routes>
     </Suspense>
