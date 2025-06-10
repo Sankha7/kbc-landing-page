@@ -17,7 +17,7 @@ const HeroSection = ({
   title = "Kolkata Business Club",
   subtitle = "Join the waitlist for the exclusive community app for Kolkata entrepreneurs.",
   appStoreUrl = "#",
-  playStoreUrl = "#",
+  playStoreUrl = "https://play.google.com/store/apps/details?id=com.kolkata.business.club",
   ctaText = "Join Waitlist",
   onCtaClick = () => {},
   backgroundImage = homePageBackgroundImage,
