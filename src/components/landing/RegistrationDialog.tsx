@@ -54,13 +54,7 @@ const RegistrationDialog = ({
     const submissionData = { ...data, business_type: selectedOption };
     setIsSubmitting(true);
     try {
-      const { data: response, error } = await supabase
-        .from("registrations")
-        .insert([submissionData]);
 
-      if (error) {
-        toast.error("Failed to join waitlist");
-      } else {
         const apiResponse = await fetch("https://projects.dotlinkertech.com/kbc-test-server/public/api/join-waitlist", {
           method: "POST",
           headers: {
@@ -78,7 +72,7 @@ const RegistrationDialog = ({
 
         toast.success("Successfully joined waitlist");
         reset();
-      }
+
     } catch (error) {
       toast.error("Failed to join waitlist");
       console.log("response", error);

@@ -31,5 +31,19 @@ export default defineConfig({
   server: {
     // @ts-ignore
     allowedHosts: true,
+  },
+  test: {
+    environment: 'jsdom',    // DOM for React components
+    globals: true,   // use describe/it/expect without imports
+    setupFiles: './src/setupTests.ts',
+    css: true,   // let Vitest process CSS (handy with Tailwind)
+    coverage: {
+      provider: 'v8',      // uses @vitest/coverage-v8
+      reporter: ['text', 'html', 'json-summary'],
+      reportsDirectory: './coverage',
+      all: true,
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: ['src/main.tsx', 'src/vite-env.d.ts']
+    }
   }
 });
