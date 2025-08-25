@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 interface FooterProps {
   logo?: string;
   socialLinks?: Array<{
+    name: string;
     icon: React.ReactNode;
     href: string;
   }>;
@@ -14,8 +15,16 @@ interface FooterProps {
 const Footer = ({
   logo = "Kolkata Business Club",
   socialLinks = [
-    { icon: <Linkedin className="w-5 h-5" />, href: "https://www.linkedin.com/company/the-kolkata-business-club/" },
-    { icon: <Instagram className="w-5 h-5" />, href: "https://www.instagram.com/kolkatabusinessclub/" },
+    { 
+      name: "LinkedIn", 
+      icon: <Linkedin className="w-5 h-5" />, 
+      href: "https://www.linkedin.com/company/the-kolkata-business-club/" 
+    },
+    { 
+      name: "Instagram", 
+      icon: <Instagram className="w-5 h-5" />, 
+      href: "https://www.instagram.com/kolkatabusinessclub/" 
+    },
   ],
 }: FooterProps) => {
   return (
@@ -38,6 +47,7 @@ const Footer = ({
                 className="hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={link.name}
               >
                 {link.icon}
               </Link>

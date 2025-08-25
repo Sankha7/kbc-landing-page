@@ -1,27 +1,25 @@
-import { Suspense } from "react";
-import { useRoutes, Routes, Route } from "react-router-dom";
-import Home from "./components/home";
-import Blog from "./components/blog";
-import Contact from "./components/contact";
-import About from "./components/about";
+import { Suspense, lazy } from "react";
+import { Routes, Route } from "react-router-dom";
 import  Layout  from "./Layout.jsx";
-import { ContactSection } from "./components/contact/ContactSection.js";
-import BlogsSection from "./components/landing/BlogsSection.js";
-import AboutSection from "./components/about/AboutSection.js";
-import NotFound from "./components/notFound.js";
-import Privacy from "./components/privacy.tsx";
+
+const HomeLazy = lazy(() => import("./components/home"));
+const BlogLazy = lazy(() => import("./components/blog"));
+const ContactSectionLazy = lazy(() => import("./components/contact/ContactSection.js"));
+const AboutSectionLazy = lazy(() => import("./components/about/AboutSection.js"));
+const NotFoundLazy = lazy(() => import("./components/notFound.js"));
+const PrivacyLazy = lazy(() => import("./components/privacy.tsx"));
 
 function App() {
   return (
     <Suspense fallback={<p>Loading...</p>}>
       <Routes>
         <Route path="/" element={<Layout />} >
-          <Route index element={<Home />} />
-          <Route path="/blogs" element={<BlogsSection />} />
-          <Route path="/contact" element={<ContactSection />} />
-          <Route path="/about" element={<AboutSection />} />
-          <Route path="*" element={<NotFound />} />
-          <Route path="/privacy-policy" element={<Privacy />} />
+          <Route index element={<HomeLazy />} />
+          <Route path="/blogs" element={<BlogLazy />} />
+          <Route path="/contact" element={<ContactSectionLazy />} />
+          <Route path="/about" element={<AboutSectionLazy />} />
+          <Route path="*" element={<NotFoundLazy />} />
+          <Route path="/privacy-policy" element={<PrivacyLazy />} />
         </Route>
       </Routes>
     </Suspense>

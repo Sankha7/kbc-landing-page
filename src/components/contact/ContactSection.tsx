@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { supabase } from "../../lib/supabase";
 
-export const ContactSection = () => {
+const ContactSection = () => {
   const [nameValue, setNameValue] = useState("");
   const [emailValue, setEmailValue] = useState("");
   const [phoneValue, setPhoneValue] = useState("");
@@ -118,3 +118,4 @@ export const ContactSection = () => {
   );
 };
 
+export default ContactSection;

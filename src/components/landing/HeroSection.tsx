@@ -25,14 +25,15 @@ const HeroSection = ({
   return (
     <div className="relative h-[500px] w-full bg-slate-900 overflow-hidden">
       {/* Background Image with Overlay */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-        }}
-      >
-        <div className="absolute inset-0 bg-slate-900/70" />
-      </div>
+      <img
+        src={backgroundImage}
+        alt="Kolkata Business Club background"
+        className="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
+        decoding="async"
+        fetchPriority="high"
+      />
+      <div className="absolute inset-0 bg-slate-900/70" />
 
       {/* Content Container */}
       <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-center text-center">
@@ -46,13 +47,14 @@ const HeroSection = ({
 
         <div>
           <div className="flex flex-col items-center gap-6">
-            <Button
-              size="lg"
-              className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-6 text-lg"
-              onClick={onCtaClick}
-            >
-              {ctaText}
-            </Button>
+          <Button
+            size="lg"
+            className="bg-orange-800 hover:bg-orange-900 text-white px-8 py-6 text-lg"
+            onClick={onCtaClick}
+          >
+            {ctaText}
+          </Button>
+
 
             <div className="mt-4 flex flex-col items-center">
               <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-4">

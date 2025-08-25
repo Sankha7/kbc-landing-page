@@ -22,6 +22,9 @@ export default defineConfig({
     }),
     tempo(),
   ],
+  build: {
+    sourcemap: true,
+  },
   resolve: {
     preserveSymlinks: true,
     alias: {
