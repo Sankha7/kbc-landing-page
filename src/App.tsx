@@ -4,6 +4,7 @@ import  Layout  from "./Layout.jsx";
 
 const HomeLazy = lazy(() => import("./components/home"));
 const BlogLazy = lazy(() => import("./components/blog"));
+const BlogDetailsLazy = lazy(() => import("./components/blogDetails"));
 const ContactSectionLazy = lazy(() => import("./components/contact/ContactSection.js"));
 const AboutSectionLazy = lazy(() => import("./components/about/AboutSection.js"));
 const NotFoundLazy = lazy(() => import("./components/notFound.js"));
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Layout />} >
           <Route index element={<HomeLazy />} />
           <Route path="/blogs" element={<BlogLazy />} />
+          <Route path="/blogs/:slug" element={<BlogDetailsLazy />} />
           <Route path="/contact" element={<ContactSectionLazy />} />
           <Route path="/about" element={<AboutSectionLazy />} />
           <Route path="*" element={<NotFoundLazy />} />

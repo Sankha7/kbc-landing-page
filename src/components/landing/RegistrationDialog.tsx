@@ -55,17 +55,14 @@ const RegistrationDialog = ({
     setIsSubmitting(true);
     try {
 
-        const apiResponse = await fetch("https://projects.dotlinkertech.com/kbc-test-server/public/api/join-waitlist", {
+        const apiResponse = await fetch("https://kbc-node.dotlinkertech.com/waitlist/addUser", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({
-            name: data.first_name,
-            email: data.email
-          }),
+          body: JSON.stringify(submissionData),
         });
-
+``
         if (!apiResponse.ok) {
           throw new Error("Failed to call external API");
         }
