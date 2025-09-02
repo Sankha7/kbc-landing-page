@@ -7,9 +7,9 @@ const AboutSection = () => {
       <div className="container mx-auto flex flex-col lg:flex-row items-start justify-start my-16 gap-10">
         {/* Text Content */}
         <div className="lg:w-1/2 w-full px-4">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">
             Join Our Community and Grow Your Business
-          </h2>
+          </h1>
           <p className="text-gray-700 text-lg mb-4">
             As a member of the Kolkata Business Club, you'll get access to a range
             of exclusive benefits and opportunities to grow your business network.
@@ -20,7 +20,21 @@ const AboutSection = () => {
             <li>Community Forums: Engage in discussions, seek advice, and share experiences with other entrepreneurs</li>
             <li>Event Updates: Stay informed about upcoming business events, workshops, and meetups in Kolkata</li>
             <li>Business Directory: Discover and connect with local businesses and service providers</li>
+            <li>
+              Ecosystem Building: We connect both service providers and service
+              takers. As a member, you can hire a social media expert to boost your
+              website, or outsource your book-keeping to a trusted service
+              provider.
+            </li>
             <li>Exclusive Opportunities: Access to funding opportunities, partnerships, and business deals</li>
+            <li>
+              Collaborate: Expand your network and collaborate with other
+              entrepreneurs to share resources, expertise and knowledge.
+            </li>
+            <li>
+              Mentorship: Get guidance and mentorship from experienced
+              entrepreneurs and industry experts.
+            </li>
           </ul>
         </div>
 

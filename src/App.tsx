@@ -12,7 +12,7 @@ const PrivacyLazy = lazy(() => import("./components/privacy.tsx"));
 
 function App() {
   return (
-    <Suspense fallback={<p>Loading...</p>}>
+    <Suspense fallback={<p></p>}>
       <Routes>
         <Route path="/" element={<Layout />} >
           <Route index element={<HomeLazy />} />

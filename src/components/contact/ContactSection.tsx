@@ -47,7 +47,7 @@ const ContactSection = () => {
   return (
     <section className="bg-gray-100 py-20">
       <div className="container mx-auto p-6">
-        <h2 className="text-4xl font-bold mb-4">Get in Touch </h2>
+        <h1 className="text-4xl font-bold mb-4">Get in Touch </h1>
         <p className="mb-10">
           Have a question, feedback, or just want to say hi? Fill out the form below and I'll get back to you as soon as possible.
         </p>
@@ -113,6 +113,9 @@ const ContactSection = () => {
             </div>
           </form>
         </Card>
+        <p className="mt-10 text-center">
+          Have any questions or need more information? Get in touch with us and we'll be happy to help.
+        </p>
       </div>
     </section>
   );

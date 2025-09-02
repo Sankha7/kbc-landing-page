@@ -62,7 +62,6 @@ const RegistrationDialog = ({
           },
           body: JSON.stringify(submissionData),
         });
-``
         if (!apiResponse.ok) {
           throw new Error("Failed to call external API");
         }
