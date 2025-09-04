@@ -1,6 +1,6 @@
 import React from "react";
 import { Separator } from "@/components/ui/separator";
-import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Instagram, FacebookIcon, LucideFacebook } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface FooterProps {
@@ -16,14 +16,19 @@ const Footer = ({
   logo = "Kolkata Business Club",
   socialLinks = [
     { 
+      name: "Facebook", 
+      icon: <Facebook className="w-5 h-5" />, 
+      href: "https://www.facebook.com/profile.php?id=61572514180460" 
+    },
+    { 
       name: "LinkedIn", 
       icon: <Linkedin className="w-5 h-5" />, 
-      href: "https://www.linkedin.com/company/the-kolkata-business-club/" 
+      href: "https://www.linkedin.com/company/the-kolkata-business-club" 
     },
     { 
       name: "Instagram", 
       icon: <Instagram className="w-5 h-5" />, 
-      href: "https://www.instagram.com/kolkatabusinessclub/" 
+      href: "https://www.instagram.com/kolkatabusinessclub" 
     },
   ],
 }: FooterProps) => {

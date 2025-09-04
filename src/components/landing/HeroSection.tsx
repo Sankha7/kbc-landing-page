@@ -54,39 +54,34 @@ const HeroSection = ({
           >
             {ctaText}
           </Button>
-
-
             <div className="mt-4 flex flex-col items-center">
-              <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-4">
-                <p className="text-amber-400 text-sm font-semibold tracking-wider uppercase">
-                  Coming Soon
-                </p>
-              </div>
-              <div className="flex items-center gap-4 opacity-80 hover:opacity-100 transition-opacity duration-300">
-                <Link
-                  to={appStoreUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transform hover:scale-105 transition-transform duration-300"
-                >
+              <div className="mt-6 flex items-center gap-6">
+
+                <div className="relative">
+                  <Link
+                    to={playStoreUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transform hover:scale-105 transition-transform duration-300"
+                  >
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                      alt="Get it on Google Play"
+                      className="h-12 drop-shadow-lg hover:drop-shadow-xl transition-all duration-300"
+                    />
+                  </Link>
+                  <div className="absolute top-1 right-1 h-2 w-2 rounded-full bg-green-500 animate-pulse"></div>
+                </div>
+
+
+                <div className="relative">
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
-                    alt="Download on App Store"
-                    className="h-10"
+                    alt="Coming soon on App Store"
+                    className="h-12 opacity-50 drop-shadow-lg hover:drop-shadow-xl transition-all duration-300"
                   />
-                </Link>
-                <Link
-                  to={playStoreUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transform hover:scale-105 transition-transform duration-300"
-                >
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                    alt="Get it on Google Play"
-                    className="h-10"
-                  />
-                </Link>
+                </div>
+
               </div>
             </div>
           </div>

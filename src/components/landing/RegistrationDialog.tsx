@@ -62,15 +62,16 @@ const RegistrationDialog = ({
           },
           body: JSON.stringify(submissionData),
         });
+
         if (!apiResponse.ok) {
-          throw new Error("Failed to call external API");
+          throw new Error("Failed to join waitlist");
         }
 
         toast.success("Successfully joined waitlist");
         reset();
 
     } catch (error) {
-      toast.error("Failed to join waitlist");
+      toast.error("Failed to join waitlist: You allready joined the waitlist or there was an error.");
       console.log("response", error);
     } finally {
       setIsSubmitting(false);
