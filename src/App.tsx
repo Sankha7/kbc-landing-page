@@ -1,6 +1,6 @@
 import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
-import  Layout  from "./Layout.jsx";
+import Layout from "./Layout.jsx";
 
 const HomeLazy = lazy(() => import("./components/home"));
 const BlogLazy = lazy(() => import("./components/blog"));
@@ -9,6 +9,7 @@ const ContactSectionLazy = lazy(() => import("./components/contact/ContactSectio
 const AboutSectionLazy = lazy(() => import("./components/about/AboutSection.js"));
 const NotFoundLazy = lazy(() => import("./components/notFound.js"));
 const PrivacyLazy = lazy(() => import("./components/privacy.tsx"));
+const DeleteComponent = lazy(() => import("./components/delete.tsx"));
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="*" element={<NotFoundLazy />} />
           <Route path="/privacy-policy" element={<PrivacyLazy />} />
         </Route>
+        <Route path="/delete-account" element={<DeleteComponent />} />
       </Routes>
     </Suspense>
   );
