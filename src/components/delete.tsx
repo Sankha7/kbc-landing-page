@@ -19,9 +19,8 @@ const deleteComponent = () => {
             This action <strong>cannot be undone</strong> and will remove:
           </p>
           <ul className="list-disc ml-6 mt-2 text-sm space-y-1">
-            <li>Your saved Bible bookmarks and highlights</li>
-            <li>Your verse images and notes</li>
-            <li>Your reading plans progress</li>
+            <li>Your post images</li>
+            <li>Your reading plans</li>
             <li>Your preferences and personalization data</li>
           </ul>
         </div>
