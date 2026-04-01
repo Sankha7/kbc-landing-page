@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import  homePageBackgroundImage  from "/images/homepageImg.webp";
+import homePageBackgroundImage from "/images/homepageImg.webp";
 import { Link } from "react-router-dom";
 
 interface HeroSectionProps {
@@ -16,10 +16,10 @@ interface HeroSectionProps {
 const HeroSection = ({
   title = "Kolkata Business Club",
   subtitle = "Join the waitlist for the exclusive community app for Kolkata entrepreneurs.",
-  appStoreUrl = "#",
+  appStoreUrl = "https://apps.apple.com/in/app/kolkata-business-club/id6758504391",
   playStoreUrl = "https://play.google.com/store/apps/details?id=com.kolkata.business.club",
   ctaText = "Join Waitlist",
-  onCtaClick = () => {},
+  onCtaClick = () => { },
   backgroundImage = homePageBackgroundImage,
 }: HeroSectionProps) => {
   return (
@@ -47,13 +47,13 @@ const HeroSection = ({
 
         <div>
           <div className="flex flex-col items-center gap-6">
-          <Button
-            size="lg"
-            className="bg-orange-800 hover:bg-orange-900 text-white px-8 py-6 text-lg"
-            onClick={onCtaClick}
-          >
-            {ctaText}
-          </Button>
+            <Button
+              size="lg"
+              className="bg-orange-800 hover:bg-orange-900 text-white px-8 py-6 text-lg"
+              onClick={onCtaClick}
+            >
+              {ctaText}
+            </Button>
             <div className="mt-4 flex flex-col items-center">
               <div className="mt-6 flex items-center gap-6">
 
@@ -75,11 +75,19 @@ const HeroSection = ({
 
 
                 <div className="relative">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
-                    alt="Coming soon on App Store"
-                    className="h-12 opacity-50 drop-shadow-lg hover:drop-shadow-xl transition-all duration-300"
-                  />
+                  <Link
+                    to={appStoreUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transform hover:scale-105 transition-transform duration-300"
+                  >
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+                      alt="Coming soon on App Store"
+                      className="h-12 drop-shadow-lg hover:drop-shadow-xl transition-all duration-300"
+                    />
+                  </Link>
+                  <div className="absolute top-1 right-1 h-2 w-2 rounded-full bg-green-500 animate-pulse"></div>
                 </div>
 
               </div>
