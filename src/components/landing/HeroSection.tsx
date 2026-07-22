@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import homePageBackgroundImage from "/images/homepageImg.webp";
-import { Link } from "react-router-dom";
 
 interface HeroSectionProps {
   title?: string;
@@ -55,41 +54,25 @@ const HeroSection = ({
               {ctaText}
             </Button>
             <div className="mt-4 flex flex-col items-center">
-              <div className="mt-6 flex items-center gap-6">
-
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gray-200">
+                Coming soon
+              </p>
+              <div className="mt-3 flex flex-wrap items-center justify-center gap-4">
                 <div className="relative">
-                  <Link
-                    to={playStoreUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="transform hover:scale-105 transition-transform duration-300"
-                  >
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                      alt="Get it on Google Play"
-                      className="h-12 drop-shadow-lg hover:drop-shadow-xl transition-all duration-300"
-                    />
-                  </Link>
-                  <div className="absolute top-1 right-1 h-2 w-2 rounded-full bg-green-500 animate-pulse"></div>
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                    alt="Google Play"
+                    className="h-12 opacity-80 grayscale"
+                  />
                 </div>
 
-
                 <div className="relative">
-                  <Link
-                    to={appStoreUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="transform hover:scale-105 transition-transform duration-300"
-                  >
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
-                      alt="Coming soon on App Store"
-                      className="h-12 drop-shadow-lg hover:drop-shadow-xl transition-all duration-300"
-                    />
-                  </Link>
-                  <div className="absolute top-1 right-1 h-2 w-2 rounded-full bg-green-500 animate-pulse"></div>
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+                    alt="App Store"
+                    className="h-12 opacity-80 grayscale"
+                  />
                 </div>
-
               </div>
             </div>
           </div>
