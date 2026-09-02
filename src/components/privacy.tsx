@@ -14,9 +14,9 @@ const Privacy = () => {
           }}
         >
           <div className="container mx-auto px-4">
-            <div className="p-8 bg-white/95 w-[90%] mx-auto">
-              <h1 className="text-3xl font-bold text-gray-900 mb-6">Privacy Policy</h1>
-              <p className="text-gray-600 mb-4">Last updated: May 23, 2025</p>
+            <div className="premium-card p-8 w-[90%] mx-auto">
+              <h1 className="text-3xl font-bold text-foreground mb-6">Privacy Policy</h1>
+              <p className="text-muted-foreground mb-4">Last updated: May 23, 2025</p>
               
               <div className="prose prose-slate max-w-none">
                 <p>

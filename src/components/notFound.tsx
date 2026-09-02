@@ -6,14 +6,14 @@ function NotFound() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-background/60">
       <h1 className="text-4xl font-bold mb-4">404 - Page Not Found</h1>
-      <p className="mb-8 text-lg text-gray-600">
+      <p className="mb-8 text-lg text-muted-foreground">
         The page you are looking for does not exist.
       </p>
-      <Button 
+      <Button
         onClick={() => navigate(-1)}
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        className="bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white border-0 rounded-xl font-bold py-2 px-4"
       >
         Go Back
       </Button>

@@ -81,13 +81,13 @@ const RegistrationDialog = ({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[600px] bg-white">
+      <DialogContent className="sm:max-w-[600px]">
         <form onSubmit={handleSubmit(onSubmit)}>
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold text-gray-900">
+            <DialogTitle className="text-2xl font-bold">
               Join the Waitlist
             </DialogTitle>
-            <DialogDescription className="text-gray-600">
+            <DialogDescription>
               Be among the first to access the Kolkata Business Club mobile app
               when it launches.
             </DialogDescription>
@@ -216,7 +216,7 @@ const RegistrationDialog = ({
             </Button>
             <Button
               type="submit"
-              className="bg-[#E31E24] text-white hover:bg-[#0A2558]"
+              className="bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white border-0 transition-all"
               disabled={isSubmitting}
             >
               {isSubmitting ? "Submitting..." : "Join Waitlist"}

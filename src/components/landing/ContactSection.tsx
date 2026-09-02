@@ -25,25 +25,25 @@ const ContactSection = ({
   };
 
   return (
-    <section className="w-full min-h-[800px] bg-gray-50 py-16 px-4">
+    <section className="w-full min-h-[800px] bg-secondary py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-foreground mb-4">
             Get in Touch
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Have questions about membership or want to learn more about the
             Kolkata Business Club? We'd love to hear from you.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 items-start">
-          <Card className="p-8 bg-white shadow-lg">
+          <Card className="p-8 bg-card shadow-lg">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 mb-2"
+                  className="block text-sm font-medium text-muted-foreground mb-2"
                 >
                   Name
                 </label>
@@ -59,7 +59,7 @@ const ContactSection = ({
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 mb-2"
+                  className="block text-sm font-medium text-muted-foreground mb-2"
                 >
                   Email
                 </label>
@@ -76,7 +76,7 @@ const ContactSection = ({
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 mb-2"
+                  className="block text-sm font-medium text-muted-foreground mb-2"
                 >
                   Message
                 </label>
@@ -98,10 +98,10 @@ const ContactSection = ({
 
           <div className="space-y-8">
             <div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-foreground mb-4">
                 Office Location
               </h3>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 123 Business District
                 <br />
                 Kolkata, West Bengal 700001
@@ -111,10 +111,10 @@ const ContactSection = ({
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-foreground mb-4">
                 Contact Information
               </h3>
-              <div className="space-y-2 text-gray-600">
+              <div className="space-y-2 text-muted-foreground">
                 <p>Email: info@kolkatabusinessclub.com</p>
                 <p>Phone: +91 33 1234 5678</p>
                 <p>Hours: Monday - Friday, 9:00 AM - 6:00 PM IST</p>
@@ -122,10 +122,10 @@ const ContactSection = ({
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-foreground mb-4">
                 Connect With Us
               </h3>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 Follow us on social media for the latest updates, events, and
                 networking opportunities.
               </p>

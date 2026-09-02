@@ -17,6 +17,25 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: [
+          '"TeX Gyre Heros"',
+          '"Helvetica Neue"',
+          "Helvetica",
+          "Arial",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+        ],
+        serif: [
+          "Archivo",
+          '"TeX Gyre Heros"',
+          '"Helvetica Neue"',
+          "Helvetica",
+          "Arial",
+          "sans-serif",
+        ],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

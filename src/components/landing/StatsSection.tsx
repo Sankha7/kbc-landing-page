@@ -1,5 +1,4 @@
 import React from "react";
-import { Card } from "@/components/ui/card";
 import { Users, Building, Calendar, Globe } from "lucide-react";
 
 interface Stat {
@@ -17,28 +16,28 @@ interface StatsSectionProps {
 const defaultStats: Stat[] = [
   {
     id: 1,
-    icon: <Users className="w-8 h-8 text-blue-600" />,
+    icon: <Users className="w-7 h-7" />,
     value: "500+",
     label: "Entrepreneurs",
     description: "Expected to join in first month",
   },
   {
     id: 2,
-    icon: <Building className="w-8 h-8 text-blue-600" />,
+    icon: <Building className="w-7 h-7" />,
     value: "100+",
     label: "Local Businesses",
     description: "Already expressed interest",
   },
   {
     id: 3,
-    icon: <Calendar className="w-8 h-8 text-blue-600" />,
+    icon: <Calendar className="w-7 h-7" />,
     value: "20+",
     label: "Monthly Events",
     description: "Planned for members",
   },
   {
     id: 4,
-    icon: <Globe className="w-8 h-8 text-blue-600" />,
+    icon: <Globe className="w-7 h-7" />,
     value: "5+",
     label: "Industry Sectors",
     description: "Represented in our network",
@@ -47,38 +46,38 @@ const defaultStats: Stat[] = [
 
 const StatsSection = ({ stats = defaultStats }: StatsSectionProps) => {
   return (
-    <section className="w-full min-h-[600px] bg-slate-50 py-16 px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+    <section className="relative w-full py-24 px-4 bg-background overflow-hidden">
+      <div className="glow-orb w-[500px] h-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20" />
+      <div className="relative max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <span className="tag-pill mb-5">By The Numbers</span>
+          <h2 className="font-serif text-4xl md:text-5xl font-extrabold text-foreground mt-5 mb-5">
             Growing Business Community
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-muted-foreground">
             Join Kolkata's fastest-growing business network
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat) => (
-            <Card
+            <div
               key={stat.id}
-              className="p-6 text-center bg-white rounded-lg shadow hover:shadow-lg transition-all cursor-pointer"
+              className="premium-card p-8 text-center cursor-pointer"
             >
-              <div className="flex flex-col items-center space-y-4">
-                <div className="p-3 rounded-full bg-blue-50">{stat.icon}</div>
-                <div>
-                  <div className="text-3xl font-bold text-blue-600">
-                    {stat.value}
-                  </div>
-                  <div className="text-lg font-semibold text-gray-900">
-                    {stat.label}
-                  </div>
-                  <p className="text-sm text-gray-600 mt-2">
-                    {stat.description}
-                  </p>
-                </div>
+              <div className="icon-badge w-14 h-14 mx-auto mb-5">
+                {stat.icon}
               </div>
-            </Card>
+              <div className="font-serif text-4xl font-extrabold text-accent mb-2">
+                {stat.value}
+              </div>
+              <div className="text-lg font-semibold text-foreground mb-2">
+                {stat.label}
+              </div>
+              <p className="text-sm text-muted-foreground">
+                {stat.description}
+              </p>
+            </div>
           ))}
         </div>
       </div>
@@ -87,4 +86,3 @@ const StatsSection = ({ stats = defaultStats }: StatsSectionProps) => {
 };
 
 export default StatsSection;
-

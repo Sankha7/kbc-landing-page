@@ -20,7 +20,7 @@ export const getBlogData = () => {
             href: "https://www.linkedin.com/posts/the-kolkata-business-club_how-to-start-a-business-in-kolkata-a-step-by-step-activity-7295042400547221504-6Q6k?utm_source=share&utm_medium=member_desktop",
             date: "June 12, 2024",
             slug: "how-to-start-a-business-in-kolkata",
-            html: `<p style="font-size: 16px; color: #555; line-height: 1.6;">
+            html: `<p style="font-size: 16px; color: #9ca3af; line-height: 1.6;">
             Starting a business in <strong>Kolkata</strong>, the cultural and commercial hub of Eastern India, can be an exciting and rewarding endeavor. With its growing economy, strong infrastructure, and vibrant consumer base, Kolkata offers ample opportunities for entrepreneurs. Whether you are launching a small startup or a large-scale business, here's a comprehensive guide to help you get started.
             </p>
 
@@ -55,7 +55,7 @@ export const getBlogData = () => {
             <li style="margin-bottom: 8px;">Private Limited Company: Register through the MCA and obtain a Certificate of Incorporation.</li>
             </ul>
 
-            <h3 style="color: #34495e; margin-top: 20px; margin-bottom: 15px; font-size: 20px;">Essential Registrations & Licenses</h3>
+            <h3 style="color: #cbd5e1; margin-top: 20px; margin-bottom: 15px; font-size: 20px;">Essential Registrations & Licenses</h3>
             <ul style="margin-bottom: 15px; padding-left: 20px; line-height: 1.6;">
             <li style="margin-bottom: 8px;">GST Registration</li>
             <li style="margin-bottom: 8px;">Trade License (Kolkata Municipal Corporation)</li>
@@ -123,7 +123,7 @@ export const getBlogData = () => {
             href: "https://www.linkedin.com/posts/the-kolkata-business-club_how-to-grow-your-business-in-kolkata-visit-activity-7302894328580890624-UD-f?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUujqwBsG2kp2EZCCbymbDFwW_pTqKfqzo",
             date: "June 15, 2024",
             slug: "how-to-grow-your-business-in-kolkata",
-            html: `<p style="font-size: 16px; color: #555; line-height: 1.6; margin-bottom: 20px;">
+            html: `<p style="font-size: 16px; color: #9ca3af; line-height: 1.6; margin-bottom: 20px;">
                 Kolkata is a city full of energy, culture, and opportunities. Whether you are starting a new venture or looking to expand your business, Kolkata offers a unique mix of tradition and modernity that can work in your favor. However, growing a business in this competitive landscape requires strategy, patience, and persistence. Here are some detailed steps to help you expand your business successfully in the City of Joy:
                 </p>
 
@@ -229,7 +229,7 @@ export const getBlogData = () => {
                 <li style="margin-bottom: 8px;"><strong>Be Open to New Ideas:</strong> Consider launching new products or services, upgrading your existing offerings, or diversifying your business based on customer needs.</li>
                 </ul>
 
-                <p style="font-size: 16px; color: #555; line-height: 1.6; margin-top: 25px; padding-top: 20px; border-top: 2px solid #e9ecef;">
+                <p style="font-size: 16px; color: #9ca3af; line-height: 1.6; margin-top: 25px; padding-top: 20px; border-top: 2px solid #334155;">
                 Growing a business in Kolkata requires a mix of strategy, relationship-building, and persistence. By understanding the local market, embracing digital tools, and engaging with the community, you can create a strong foundation for success. The city offers immense opportunities, and with the right approach, your business can flourish.
                 </p>`
         },
@@ -241,7 +241,7 @@ export const getBlogData = () => {
             href: "https://www.linkedin.com/posts/the-kolkata-business-club_kolkataentrepreneurs-startupcommunity-businessnetwork-activity-7301161033799233536-lrsI?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUujqwBsG2kp2EZCCbymbDFwW_pTqKfqzo",
             date: "June 18, 2024",
             slug: "how-to-market-your-business-in-kolkata",
-            html: `<p style="font-size: 16px; color: #555; line-height: 1.6; margin-bottom: 20px;">
+            html: `<p style="font-size: 16px; color: #9ca3af; line-height: 1.6; margin-bottom: 20px;">
                 Kolkata is a city full of life, culture, and opportunities for businesses. Whether you run a small shop, a startup, or a well-established brand, marketing the right way can help you grow. Here's an easy-to-follow guide to marketing your business in Kolkata.
                 </p>
 
@@ -249,7 +249,7 @@ export const getBlogData = () => {
                 <p style="margin-bottom: 15px; line-height: 1.6;">
                 Before you start marketing, understand your customers. Kolkata is a mix of tradition and modern trends. People here value trust, good quality, and affordability.
                 </p>
-                <h3 style="color: #34495e; margin-top: 20px; margin-bottom: 15px; font-size: 20px;"><strong>Things to Keep in Mind:</strong></h3>
+                <h3 style="color: #cbd5e1; margin-top: 20px; margin-bottom: 15px; font-size: 20px;"><strong>Things to Keep in Mind:</strong></h3>
                 <ul style="margin-bottom: 15px; padding-left: 20px; line-height: 1.6;">
                 <li style="margin-bottom: 8px;">Many people prefer Bengali, so using local language in marketing can work well.</li>
                 <li style="margin-bottom: 8px;">Word-of-mouth is very important—people rely on recommendations from friends and family.</li>
@@ -261,27 +261,27 @@ export const getBlogData = () => {
                 With more people using the internet, online marketing is a great way to reach customers.
                 </p>
 
-                <h3 style="color: #34495e; margin-top: 20px; margin-bottom: 15px; font-size: 20px;"><strong>a) Be Found on Google</strong></h3>
+                <h3 style="color: #cbd5e1; margin-top: 20px; margin-bottom: 15px; font-size: 20px;"><strong>a) Be Found on Google</strong></h3>
                 <ul style="margin-bottom: 15px; padding-left: 20px; line-height: 1.6;">
                 <li style="margin-bottom: 8px;">Make sure your business appears in Google searches by using location-based keywords.</li>
                 <li style="margin-bottom: 8px;">List your business on Google My Business for better visibility.</li>
                 </ul>
 
-                <h3 style="color: #34495e; margin-top: 20px; margin-bottom: 15px; font-size: 20px;"><strong>b) Use Social Media</strong></h3>
+                <h3 style="color: #cbd5e1; margin-top: 20px; margin-bottom: 15px; font-size: 20px;"><strong>b) Use Social Media</strong></h3>
                 <ul style="margin-bottom: 15px; padding-left: 20px; line-height: 1.6;">
                 <li style="margin-bottom: 8px;">Facebook, Instagram, and WhatsApp are widely used in Kolkata.</li>
                 <li style="margin-bottom: 8px;">Run ads and post regularly to stay connected with customers.</li>
                 <li style="margin-bottom: 8px;">Join local groups to promote your business.</li>
                 </ul>
 
-                <h3 style="color: #34495e; margin-top: 20px; margin-bottom: 15px; font-size: 20px;"><strong>c) Create Useful Content</strong></h3>
+                <h3 style="color: #cbd5e1; margin-top: 20px; margin-bottom: 15px; font-size: 20px;"><strong>c) Create Useful Content</strong></h3>
                 <ul style="margin-bottom: 15px; padding-left: 20px; line-height: 1.6;">
                 <li style="margin-bottom: 8px;">Start a blog or share helpful posts about your industry.</li>
                 <li style="margin-bottom: 8px;">Use simple Bengali and English to reach more people.</li>
                 <li style="margin-bottom: 8px;">Make videos showing your products, services, or customer experiences.</li>
                 </ul>
 
-                <h3 style="color: #34495e; margin-top: 20px; margin-bottom: 15px; font-size: 20px;"><strong>d) Work with Influencers</strong></h3>
+                <h3 style="color: #cbd5e1; margin-top: 20px; margin-bottom: 15px; font-size: 20px;"><strong>d) Work with Influencers</strong></h3>
                 <ul style="margin-bottom: 15px; padding-left: 20px; line-height: 1.6;">
                 <li style="margin-bottom: 8px;">Partner with local influencers to promote your business.</li>
                 <li style="margin-bottom: 8px;">Collaborate with food bloggers, fashion vloggers, or tech experts, depending on your industry.</li>
@@ -292,20 +292,20 @@ export const getBlogData = () => {
                 Even with digital marketing, old-school methods still work well in Kolkata.
                 </p>
 
-                <h3 style="color: #34495e; margin-top: 20px; margin-bottom: 15px; font-size: 20px;"><strong>a) Print and Outdoor Ads</strong></h3>
+                <h3 style="color: #cbd5e1; margin-top: 20px; margin-bottom: 15px; font-size: 20px;"><strong>a) Print and Outdoor Ads</strong></h3>
                 <ul style="margin-bottom: 15px; padding-left: 20px; line-height: 1.6;">
                 <li style="margin-bottom: 8px;">Advertise in newspapers like The Telegraph and Anandabazar Patrika.</li>
                 <li style="margin-bottom: 8px;">Use billboards in busy areas like Park Street, Esplanade, and Salt Lake.</li>
                 <li style="margin-bottom: 8px;">Distribute flyers in local markets and neighborhoods.</li>
                 </ul>
 
-                <h3 style="color: #34495e; margin-top: 20px; margin-bottom: 15px; font-size: 20px;"><strong>b) Radio and TV Ads</strong></h3>
+                <h3 style="color: #cbd5e1; margin-top: 20px; margin-bottom: 15px; font-size: 20px;"><strong>b) Radio and TV Ads</strong></h3>
                 <ul style="margin-bottom: 15px; padding-left: 20px; line-height: 1.6;">
                 <li style="margin-bottom: 8px;">Promote your business on radio stations like 91.9 Friends FM and 98.3 Radio Mirchi.</li>
                 <li style="margin-bottom: 8px;">Advertise on local TV channels like ABP Ananda and Zee Bangla.</li>
                 </ul>
 
-                <h3 style="color: #34495e; margin-top: 20px; margin-bottom: 15px; font-size: 20px;"><strong>c) Be Part of Local Events</strong></h3>
+                <h3 style="color: #cbd5e1; margin-top: 20px; margin-bottom: 15px; font-size: 20px;"><strong>c) Be Part of Local Events</strong></h3>
                 <ul style="margin-bottom: 15px; padding-left: 20px; line-height: 1.6;">
                 <li style="margin-bottom: 8px;">Sponsor events like Durga Puja and the Kolkata Book Fair for visibility.</li>
                 <li style="margin-bottom: 8px;">Organize workshops or small events to engage with people directly.</li>
@@ -345,7 +345,7 @@ export const getBlogData = () => {
             href: "https://www.linkedin.com/posts/the-kolkata-business-club_legal-requirements-for-businesses-in-kolkata-activity-7296452832692420608-BXcZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUujqwBsG2kp2EZCCbymbDFwW_pTqKfqzohttps://www.linkedin.com/posts/the-kolkata-business-club_legal-requirements-for-businesses-in-kolkata-activity-7296452832692420608-BXcZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUujqwBsG2kp2EZCCbymbDFwW_pTqKfqzohttps://www.linkedin.com/posts/the-kolkata-business-club_legal-requirements-for-businesses-in-kolkata-activity-7296452832692420608-BXcZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUujqwBsG2kp2EZCCbymbDFwW_pTqKfqzo",
             date: "June 21, 2024",
             slug: "legal-requirements-for-businesses-in-kolkata",
-            html: `<p style="font-size: 16px; color: #555; line-height: 1.6; margin-bottom: 20px;">
+            html: `<p style="font-size: 16px; color: #9ca3af; line-height: 1.6; margin-bottom: 20px;">
                 Setting up a business in Kolkata, West Bengal, requires adhering to various legal requirements. Here's a streamlined guide to help you navigate this process effectively:
                 </p>
 
@@ -410,7 +410,7 @@ export const getBlogData = () => {
             href: "https://www.linkedin.com/posts/the-kolkata-business-club_unlocking-networking-opportunities-in-kolkata-activity-7298325297408446464-v4So?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUujqwBsG2kp2EZCCbymbDFwW_pTqKfqzo",
             date: "June 24, 2024",
             slug: "networking-opportunities-in-kolkata",
-            html: `<p style="font-size: 16px; color: #555; line-height: 1.6; margin-bottom: 20px;">
+            html: `<p style="font-size: 16px; color: #9ca3af; line-height: 1.6; margin-bottom: 20px;">
                 Kolkata, the City of Joy, is not just about rich culture and heritage. It's also a growing hub for professionals, entrepreneurs, and startups. Networking is key to growth in any industry, be it tech, business, or marketing.
                 </p>
 
@@ -452,7 +452,7 @@ export const getBlogData = () => {
                 <li style="margin-bottom: 8px;"><strong>Build a Professional Circle:</strong> Expand your professional network in the city.</li>
                 </ul>
 
-                <p style="font-size: 16px; color: #555; line-height: 1.6; margin-top: 25px; padding-top: 20px; border-top: 2px solid #e9ecef;">
+                <p style="font-size: 16px; color: #9ca3af; line-height: 1.6; margin-top: 25px; padding-top: 20px; border-top: 2px solid #334155;">
                 Whether you're an entrepreneur, job seeker, or freelancer, Kolkata offers a wealth of networking opportunities! Keep an eye on event platforms like Meetup, Eventbrite, and LinkedIn Events to stay updated.
                 </p>`
         },
@@ -464,7 +464,7 @@ export const getBlogData = () => {
             href: "https://www.linkedin.com/posts/the-kolkata-business-club_financing-options-for-kolkata-businesses-activity-7295730175369977860-g3zE?utm_source=share&utm_medium=member_desktop",
             date: "June 27, 2024",
             slug: "financing-options-for-kolkata-businesses",
-            html: `<p style="font-size: 16px; color: #555; line-height: 1.6; margin-bottom: 20px;">
+            html: `<p style="font-size: 16px; color: #9ca3af; line-height: 1.6; margin-bottom: 20px;">
                 Starting or scaling a business in Kolkata? Finding the right funding source can be a game-changer! Whether you're a small startup, an MSME, or an established company, choosing the right financing option is crucial for sustainable growth. Here's a breakdown of the best financing options available:
                 </p>
 
@@ -500,7 +500,7 @@ export const getBlogData = () => {
                 <li style="margin-bottom: 8px;"><strong>P2P Lending (Faircent, Lendbox):</strong> Get direct funding from individual investors.</li>
                 </ul>
 
-                <p style="font-size: 16px; color: #555; line-height: 1.6; margin-top: 25px; padding-top: 20px; border-top: 2px solid #e9ecef;">
+                <p style="font-size: 16px; color: #9ca3af; line-height: 1.6; margin-top: 25px; padding-top: 20px; border-top: 2px solid #334155;">
                 Choosing the right financing option depends on your business needs, so consider all these options carefully to find the best fit for you. Let me know if you need more details on any of these!
                 </p>`
         },

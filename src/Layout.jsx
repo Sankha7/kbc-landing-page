@@ -16,13 +16,13 @@ function Layout() {
   return (
     <>
     <TitleUpdater />
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <ToastContainer/>
       <Navbar onRegisterClick={handleRegistrationClick} />
 
       <Outlet />
 
-      <Footer />
+      <Footer onCtaClick={handleRegistrationClick} />
 
       <RegistrationDialog
         open={isRegistrationOpen}

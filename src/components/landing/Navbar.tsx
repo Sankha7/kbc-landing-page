@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 interface NavbarProps {
   onRegisterClick?: () => void;
@@ -21,52 +21,88 @@ const Navbar = ({
     { label: "About", href: "/about" },
   ],
 }: NavbarProps) => {
-  return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 h-20">
-      <div className="container mx-auto px-4 h-full">
-        <div className="flex items-center justify-between h-full">
-          {/* Logo */}
-          <div className="flex items-center">
-            <Link to="/" className="block">
-              <div className="flex items-center text-3xl md:text-4xl font-bold">
-                <span className="text-[#0A2558]">KB</span>
-                <span className="text-[#E31E24]">C</span>
-                <span className="text-[#E31E24]">.</span>
-              </div>
-            </Link>
-          </div>
+  const location = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            {menuItems.map((item, index) => {
-              
-              return (
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 40);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setIsScrolled(window.scrollY > 40);
+  }, [location.pathname]);
+
+  const isTransparent = location.pathname === "/" && !isScrolled;
+
+  return (
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 h-24 flex items-center transition-all duration-300 ${
+        isTransparent
+          ? "bg-transparent"
+          : "bg-background/40 backdrop-blur-2xl backdrop-saturate-200 border-b border-white/10"
+      }`}
+    >
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between gap-6">
+          {/* Logo */}
+          <Link to="/" className="block shrink-0">
+           <img src="images/logo.png" alt="KBC Logo" className="w-32" />
+          </Link>
+
+          {/* Desktop pill nav */}
+          <div
+            className={`hidden md:flex items-center rounded-full border p-1.5 pl-6 shadow-lg transition-all duration-300 ${
+              isTransparent
+                ? "border-white/20 bg-white/5 backdrop-blur-xl"
+                : "border-white/10 bg-background/30 backdrop-blur-xl"
+            }`}
+          >
+            <div className="flex items-center gap-7 pr-5">
+              {menuItems.map((item, index) => (
                 <NavLink
                   key={index}
                   to={item.href}
                   className={({ isActive }) =>
-                    `text-[#0A2558] hover:text-[#E31E24] transition-colors font-medium ${
-                      isActive ? "text-[#E31E24]" : ""
+                    `text-sm font-semibold transition-colors ${
+                      isActive
+                        ? "text-accent"
+                        : isTransparent
+                          ? "text-white hover:text-accent"
+                          : "text-foreground hover:text-accent"
                     }`
                   }
                 >
                   {item.label}
                 </NavLink>
-              );
-            })}
+              ))}
+
+            </div>
             <Button
               onClick={onRegisterClick}
-              className="bg-[#E31E24] hover:bg-[#0A2558] text-white transition-colors"
+              className="rounded-full h-auto bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white px-6 py-2.5 border-0 transition-all"
             >
               Join Waitlist
             </Button>
           </div>
 
           {/* Mobile Menu */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-1">
+
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" aria-label="open menu">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  aria-label="open menu"
+                  className={`rounded-full ${
+                    isTransparent
+                      ? "text-white hover:text-white hover:bg-white/10"
+                      : ""
+                  }`}
+                >
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
@@ -76,14 +112,14 @@ const Navbar = ({
                     <Link
                       key={index}
                       to={item.href}
-                      className="text-[#0A2558] hover:text-[#E31E24] transition-colors font-medium py-2"
+                      className="text-foreground hover:text-accent transition-colors font-medium py-2"
                     >
                       {item.label}
                     </Link>
                   ))}
                   <Button
                     onClick={onRegisterClick}
-                    className="bg-[#E31E24] hover:bg-[#0A2558] text-white w-full transition-colors"
+                    className="rounded-full bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white w-full border-0 transition-all"
                   >
                     Join Waitlist
                   </Button>

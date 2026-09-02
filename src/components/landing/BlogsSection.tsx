@@ -64,7 +64,7 @@ const blogData = [
 const BlogsSection = () => {
   const navigate = useNavigate();
   return (
-    <section className="py-20 bg-gray-100 mt-10">
+    <section className="glass-section py-20 mt-10">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold mb-10">Blogs</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -82,8 +82,8 @@ const BlogsSection = () => {
               <CardHeader>
                 <h3 className="text-2xl font-semibold">{blog.title}</h3>
                 <div className="flex items-center space-x-2">
-                  <p className="text-sm text-gray-500">{blog.date}</p>
-                  <ExternalLink className="text-gray-500 h-5 w-5" onClick={(e) => {
+                  <p className="text-sm text-muted-foreground">{blog.date}</p>
+                  <ExternalLink className="text-muted-foreground h-5 w-5" onClick={(e) => {
                     e.stopPropagation();
                     window.open(blog.href, "_blank")
                   }} />
@@ -92,13 +92,14 @@ const BlogsSection = () => {
               <CardContent>{blog.description} ...</CardContent>
               <div className="flex items-center justify-end p-3">
                 <Button
-                  className="mt-4"
+                  className="group mt-4 bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white border-0 rounded-xl shadow-[0_0_20px_-8px_hsl(var(--primary)/0.6)] transition-all"
                   onClick={(e) => {
                     e.stopPropagation();
                     navigate(`/blogs/${blog.slug}`)
                   }}
                 >
                   Read More
+                  <ArrowUpRight className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Button>
               </div>
             </Card>

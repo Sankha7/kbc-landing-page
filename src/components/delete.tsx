@@ -1,17 +1,17 @@
 const deleteComponent = () => {
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-10">
-      <div className="bg-white shadow-xl rounded-2xl max-w-4xl w-full p-10">
+      <div className="premium-card max-w-4xl w-full p-10">
         {/* Header */}
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">
+        <h1 className="text-3xl font-bold text-foreground mb-2">
           Delete Your Kolkata Business Club Account
         </h1>
-        <p className="text-gray-600 mb-6">
+        <p className="text-muted-foreground mb-6">
           We're sorry to see you go. If you decide to delete your account, please
           read the important details below.
         </p>
         {/* Warning Box */}
-        <div className="bg-red-50 border-l-4 border-red-500 text-red-700 p-5 rounded-lg mb-8">
+        <div className="bg-destructive/10 border-l-4 border-destructive text-destructive p-5 rounded-lg mb-8">
           <p className="font-semibold text-lg mb-1">
             ⚠ Deleting your account is permanent.
           </p>
@@ -25,12 +25,12 @@ const deleteComponent = () => {
           </ul>
         </div>
         {/* Steps */}
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">
+        <h2 className="text-xl font-semibold text-foreground mb-4">
           Steps to Delete Your Account
         </h2>
-        <div className="space-y-4 text-gray-700">
+        <div className="space-y-4 text-muted-foreground">
           <div className="flex items-start gap-4">
-            <span className="flex items-center justify-center bg-blue-500 text-white w-8 h-8 rounded-full text-sm font-semibold">
+            <span className="flex items-center justify-center bg-primary text-primary-foreground w-8 h-8 rounded-full text-sm font-semibold">
               1
             </span>
             <p>
@@ -38,7 +38,7 @@ const deleteComponent = () => {
             </p>
           </div>
           <div className="flex items-start gap-4">
-            <span className="flex items-center justify-center bg-blue-500 text-white w-8 h-8 rounded-full text-sm font-semibold">
+            <span className="flex items-center justify-center bg-primary text-primary-foreground w-8 h-8 rounded-full text-sm font-semibold">
               2
             </span>
             <p>
@@ -46,7 +46,7 @@ const deleteComponent = () => {
             </p>
           </div>
           <div className="flex items-start gap-4">
-            <span className="flex items-center justify-center bg-blue-500 text-white w-8 h-8 rounded-full text-sm font-semibold">
+            <span className="flex items-center justify-center bg-primary text-primary-foreground w-8 h-8 rounded-full text-sm font-semibold">
               3
             </span>
             <p>
@@ -54,7 +54,7 @@ const deleteComponent = () => {
             </p>
           </div>
           <div className="flex items-start gap-4">
-            <span className="flex items-center justify-center bg-blue-500 text-white w-8 h-8 rounded-full text-sm font-semibold">
+            <span className="flex items-center justify-center bg-primary text-primary-foreground w-8 h-8 rounded-full text-sm font-semibold">
               4
             </span>
             <p>
@@ -62,7 +62,7 @@ const deleteComponent = () => {
             </p>
           </div>
           <div className="flex items-start gap-4">
-            <span className="flex items-center justify-center bg-blue-500 text-white w-8 h-8 rounded-full text-sm font-semibold">
+            <span className="flex items-center justify-center bg-primary text-primary-foreground w-8 h-8 rounded-full text-sm font-semibold">
               5
             </span>
             <p>
