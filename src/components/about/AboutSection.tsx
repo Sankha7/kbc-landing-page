@@ -10,6 +10,7 @@ import {
   Globe,
 } from "lucide-react";
 import { Button } from "../ui/button";
+import { Reveal, RevealGroup, RevealItem } from "../ui/reveal";
 
 const values = [
   {
@@ -38,26 +39,29 @@ const values = [
   },
 ];
 
+// Deliberately qualitative, not fabricated numbers — the club is early-stage and doesn't
+// have hundreds of members yet, so claiming "500+ Entrepreneurs" would be false advertising.
+// Swap these for real counts once there's a meaningful membership base to report.
 const impactStats = [
   {
     icon: <Users className="w-6 h-6" />,
-    value: "500+",
-    label: "Entrepreneurs",
+    value: "Verified",
+    label: "Members Only",
   },
   {
     icon: <Building className="w-6 h-6" />,
-    value: "100+",
-    label: "Local Businesses",
+    value: "Kolkata",
+    label: "Home Base",
   },
   {
     icon: <Calendar className="w-6 h-6" />,
-    value: "20+",
-    label: "Monthly Events",
+    value: "Growing",
+    label: "Every Week",
   },
   {
     icon: <Globe className="w-6 h-6" />,
-    value: "5+",
-    label: "Industry Sectors",
+    value: "Curated",
+    label: "Business Network",
   },
 ];
 
@@ -65,7 +69,7 @@ interface AboutSectionProps {
   onCtaClick?: () => void;
 }
 
-const AboutSection = ({ onCtaClick = () => {} }: AboutSectionProps) => {
+const AboutSection = ({ onCtaClick }: AboutSectionProps) => {
   return (
     <section className="glass-section py-24 overflow-hidden">
       <div className="section-grid" />
@@ -73,7 +77,7 @@ const AboutSection = ({ onCtaClick = () => {} }: AboutSectionProps) => {
       <div className="container relative mx-auto px-4">
         {/* Intro */}
         <div className="flex flex-col lg:flex-row items-center gap-14 mb-24">
-          <div className="lg:w-1/2 w-full flex flex-col">
+          <Reveal className="lg:w-1/2 w-full flex flex-col" y={20}>
             <span className="tag-pill mb-5 self-start">About Us</span>
             <h2 className="font-serif text-4xl md:text-5xl font-extrabold text-foreground mt-5 mb-5 leading-tight">
               Join Our Community and Grow Your Business
@@ -95,13 +99,13 @@ const AboutSection = ({ onCtaClick = () => {} }: AboutSectionProps) => {
               onClick={onCtaClick}
               className="group self-start bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white px-8 py-6 text-base font-semibold rounded-xl shadow-[0_0_40px_-8px_hsl(var(--primary)/0.6)] transition-all border-0"
             >
-              Join the Waitlist
+              Get Started
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
-          </div>
+          </Reveal>
 
           {/* Image */}
-          <div className="lg:w-1/2 w-full">
+          <Reveal className="lg:w-1/2 w-full" delay={0.12} y={20}>
             <div className="relative">
               <div className="glow-orb anim-float-medium w-72 h-72 -bottom-10 -right-10 opacity-40" />
               <div className="relative overflow-hidden rounded-2xl border border-accent/15 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)]">
@@ -125,11 +129,11 @@ const AboutSection = ({ onCtaClick = () => {} }: AboutSectionProps) => {
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
 
         {/* Mission & Values */}
-        <div className="text-center mb-12">
+        <Reveal className="text-center mb-12">
           <span className="tag-pill mb-5">Our Mission</span>
           <h3 className="font-serif text-3xl md:text-4xl font-extrabold text-foreground mt-5 mb-5">
             What We Stand For
@@ -138,26 +142,28 @@ const AboutSection = ({ onCtaClick = () => {} }: AboutSectionProps) => {
             The principles that shape every introduction, deal, and
             partnership made through the club
           </p>
-        </div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <RevealGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {values.map((value) => (
-            <div key={value.title} className="premium-card group h-full p-7">
-              <div className="icon-badge w-12 h-12 mb-5">{value.icon}</div>
-              <h4 className="font-serif text-lg font-bold text-foreground mb-2 transition-colors duration-300 group-hover:text-accent">
-                {value.title}
-              </h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {value.description}
-              </p>
-            </div>
+            <RevealItem key={value.title}>
+              <div className="premium-card group h-full p-7">
+                <div className="icon-badge w-12 h-12 mb-5">{value.icon}</div>
+                <h4 className="font-serif text-lg font-bold text-foreground mb-2 transition-colors duration-300 group-hover:text-accent">
+                  {value.title}
+                </h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {value.description}
+                </p>
+              </div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
 
         {/* Impact strip */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px rounded-2xl border border-accent/15 bg-accent/15 overflow-hidden">
+        <RevealGroup className="grid grid-cols-2 lg:grid-cols-4 gap-px rounded-2xl border border-accent/15 bg-accent/15 overflow-hidden">
           {impactStats.map((stat) => (
-            <div
+            <RevealItem
               key={stat.label}
               className="flex items-center gap-4 bg-card/40 backdrop-blur-xl backdrop-saturate-150 px-6 py-7"
             >
@@ -170,9 +176,9 @@ const AboutSection = ({ onCtaClick = () => {} }: AboutSectionProps) => {
                   {stat.label}
                 </p>
               </div>
-            </div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </div>
     </section>
   );

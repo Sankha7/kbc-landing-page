@@ -342,7 +342,7 @@ export const getBlogData = () => {
             title: "Legal requirements for businesses in Kolkata",
             description:
                 "Understanding the legal requirements for setting up a business in Kolkata is crucial. This blog will guide you through the necessary steps and documentation.",
-            href: "https://www.linkedin.com/posts/the-kolkata-business-club_legal-requirements-for-businesses-in-kolkata-activity-7296452832692420608-BXcZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUujqwBsG2kp2EZCCbymbDFwW_pTqKfqzohttps://www.linkedin.com/posts/the-kolkata-business-club_legal-requirements-for-businesses-in-kolkata-activity-7296452832692420608-BXcZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUujqwBsG2kp2EZCCbymbDFwW_pTqKfqzohttps://www.linkedin.com/posts/the-kolkata-business-club_legal-requirements-for-businesses-in-kolkata-activity-7296452832692420608-BXcZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUujqwBsG2kp2EZCCbymbDFwW_pTqKfqzo",
+            href: "https://www.linkedin.com/posts/the-kolkata-business-club_legal-requirements-for-businesses-in-kolkata-activity-7296452832692420608-BXcZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUujqwBsG2kp2EZCCbymbDFwW_pTqKfqzo",
             date: "June 21, 2024",
             slug: "legal-requirements-for-businesses-in-kolkata",
             html: `<p style="font-size: 16px; color: #9ca3af; line-height: 1.6; margin-bottom: 20px;">
@@ -508,3 +508,9 @@ export const getBlogData = () => {
 
     return blogData;
 };
+
+export const getBlogBySlug = (slug?: string): blogDataType | undefined => {
+    if (!slug) return undefined;
+    return getBlogData().find((blog) => blog.slug === slug);
+};
+

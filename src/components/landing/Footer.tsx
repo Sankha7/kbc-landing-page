@@ -3,6 +3,7 @@ import { Separator } from "@/components/ui/separator";
 import { ArrowRight, Facebook, Linkedin, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
+import { Reveal } from "../ui/reveal";
 
 interface FooterProps {
   onCtaClick?: () => void;
@@ -45,13 +46,13 @@ const Footer = ({
       <div className="glow-orb w-[500px] h-[500px] -bottom-64 left-1/2 -translate-x-1/2 opacity-20" />
       <div className="container relative mx-auto px-4 pt-16">
         {/* CTA band */}
-        <div className="premium-card flex flex-col md:flex-row items-center justify-between gap-6 p-8 md:p-10 mb-16">
+        <Reveal className="premium-card flex flex-col md:flex-row items-center justify-between gap-6 p-8 md:p-10 mb-16">
           <div className="text-center md:text-left">
             <h3 className="font-serif text-2xl md:text-3xl font-extrabold text-foreground mb-2">
               Ready to grow your network?
             </h3>
             <p className="text-sm text-muted-foreground">
-              Join the waitlist and be first in line when Kolkata Business Club opens its doors.
+              Join Kolkata Business Club today and start connecting with verified entrepreneurs.
             </p>
           </div>
           <Button
@@ -59,10 +60,10 @@ const Footer = ({
             onClick={onCtaClick}
             className="group shrink-0 bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white px-8 py-6 text-base font-semibold rounded-xl border-0 transition-all"
           >
-            Join the Waitlist
+            Get Started
             <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Button>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 pb-16">
           {/* Brand */}
@@ -76,16 +77,16 @@ const Footer = ({
             </p>
             <div className="flex items-center space-x-3">
               {socialLinks.map((link, index) => (
-                <Link
+                <a
                   key={index}
-                  to={link.href}
+                  href={link.href}
                   className="icon-badge w-10 h-10 hover:text-accent hover:border-accent/50 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={link.name}
                 >
                   {link.icon}
-                </Link>
+                </a>
               ))}
             </div>
           </div>

@@ -2,75 +2,24 @@ import React from "react";
 import { Card, CardContent, CardHeader } from "../ui/card";
 import { Button } from "../ui/button";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
-import { useNavigate } from "react-router";
-
-const blogData = [
-  {
-    image: "/images/start-business.webp",
-    title: "How to start a business in Kolkata",
-    description:
-      "Starting a business in Kolkata can be a challenging task, but with the right guidance, it can be a successful venture. In this blog, we will provide you with some tips and tricks to help you get started. We will cover all the legal requirements and registration process.",
-    href: "https://www.linkedin.com/posts/the-kolkata-business-club_how-to-start-a-business-in-kolkata-a-step-by-step-activity-7295042400547221504-6Q6k?utm_source=share&utm_medium=member_desktop",
-    date: "June 12, 2024",
-    slug: "how-to-start-a-business-in-kolkata",
-  },
-  {
-    image: "/images/grow-business.webp",
-    title: "How to grow your business in Kolkata",
-    description:
-      "Growing a business in Kolkata requires a strategic approach. In this blog, we will provide you with some tips and tricks to help you grow your business. We will cover all the marketing strategy and tactics.",
-    href: "https://www.linkedin.com/posts/the-kolkata-business-club_how-to-grow-your-business-in-kolkata-visit-activity-7302894328580890624-UD-f?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUujqwBsG2kp2EZCCbymbDFwW_pTqKfqzo",
-    date: "June 15, 2024",
-    slug: "how-to-grow-your-business-in-kolkata",
-  },
-  {
-    image: "/images/market-business.webp",
-    title: "How to market your business in Kolkata",
-    description:
-      "Marketing your business in Kolkata can be a challenging task, but with the right strategy, it can be a successful venture. In this blog, we will provide you with some tips and tricks.",
-    href: "https://www.linkedin.com/posts/the-kolkata-business-club_kolkataentrepreneurs-startupcommunity-businessnetwork-activity-7301161033799233536-lrsI?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUujqwBsG2kp2EZCCbymbDFwW_pTqKfqzo",
-    date: "June 18, 2024",
-    slug: "how-to-market-your-business-in-kolkata",
-  },
-  {
-    image: "/images/legal-requirements.webp",
-    title: "Legal requirements for businesses in Kolkata",
-    description:
-      "Understanding the legal requirements for setting up a business in Kolkata is crucial. This blog will guide you through the necessary steps and documentation.",
-    href: "https://www.linkedin.com/posts/the-kolkata-business-club_legal-requirements-for-businesses-in-kolkata-activity-7296452832692420608-BXcZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUujqwBsG2kp2EZCCbymbDFwW_pTqKfqzohttps://www.linkedin.com/posts/the-kolkata-business-club_legal-requirements-for-businesses-in-kolkata-activity-7296452832692420608-BXcZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUujqwBsG2kp2EZCCbymbDFwW_pTqKfqzohttps://www.linkedin.com/posts/the-kolkata-business-club_legal-requirements-for-businesses-in-kolkata-activity-7296452832692420608-BXcZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUujqwBsG2kp2EZCCbymbDFwW_pTqKfqzo",
-    date: "June 21, 2024",
-    slug: "legal-requirements-for-businesses-in-kolkata",
-  },
-  {
-    image: "/images/networking-opportunities.webp",
-    title: "Networking opportunities in Kolkata",
-    description:
-      "Networking is key to business success. Discover the best networking opportunities in Kolkata through this blog.",
-    href: "https://www.linkedin.com/posts/the-kolkata-business-club_unlocking-networking-opportunities-in-kolkata-activity-7298325297408446464-v4So?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUujqwBsG2kp2EZCCbymbDFwW_pTqKfqzo",
-    date: "June 24, 2024",
-    slug: "networking-opportunities-in-kolkata",
-  },
-  {
-    image: "/images/financing-options.webp",
-    title: "Financing options for Kolkata businesses",
-    description:
-      "Securing financing is often a major challenge. This blog explores various financing options available for businesses in Kolkata.",
-    href: "https://www.linkedin.com/posts/the-kolkata-business-club_financing-options-for-kolkata-businesses-activity-7295730175369977860-g3zE?utm_source=share&utm_medium=member_desktop",
-    date: "June 27, 2024",
-    slug: "financing-options-for-kolkata-businesses",
-  },
-];
+import { useNavigate } from "react-router-dom";
+import { getBlogData } from "../blogData";
+import { Reveal, RevealGroup, RevealItem } from "../ui/reveal";
 
 const BlogsSection = () => {
   const navigate = useNavigate();
+  const blogData = getBlogData();
+
   return (
     <section className="glass-section py-20 mt-10">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold mb-10">Blogs</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <Reveal>
+          <h1 className="text-4xl font-bold mb-10">Blogs</h1>
+        </Reveal>
+        <RevealGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {blogData.map((blog) => (
+            <RevealItem key={blog.title}>
             <Card
-              key={blog.title}
               className="transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer"
               >
               <img
@@ -103,8 +52,9 @@ const BlogsSection = () => {
                 </Button>
               </div>
             </Card>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </div>
     </section>
   );

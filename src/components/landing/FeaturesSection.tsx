@@ -1,12 +1,13 @@
 import React from "react";
 import {
-  Network,
-  BookOpen,
-  Users,
-  Calendar,
+  ShieldCheck,
+  MessageSquare,
+  Briefcase,
   Building2,
-  Trophy,
+  CreditCard,
+  Users,
 } from "lucide-react";
+import { Reveal, RevealGroup, RevealItem } from "@/components/ui/reveal";
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -45,40 +46,40 @@ interface FeaturesSectionProps {
 
 const defaultFeatures = [
   {
-    icon: <Network className="w-6 h-6" />,
-    title: "Business Networking",
+    icon: <ShieldCheck className="w-6 h-6" />,
+    title: "Verified Membership",
     description:
-      "Connect with fellow entrepreneurs and business leaders in Kolkata through our mobile app",
+      "Every member is personally vetted and approved before joining, so you always know who you're dealing with",
   },
   {
-    icon: <BookOpen className="w-6 h-6" />,
-    title: "Knowledge Sharing",
+    icon: <CreditCard className="w-6 h-6" />,
+    title: "Digital Member Card",
     description:
-      "Access exclusive content, business insights, and success stories from the community",
+      "Your verified Blue Tick and digital executive pass — shareable proof of your standing in the club",
   },
   {
-    icon: <Users className="w-6 h-6" />,
-    title: "Community Forums",
+    icon: <MessageSquare className="w-6 h-6" />,
+    title: "Direct Messaging",
     description:
-      "Engage in discussions, seek advice, and share experiences with other entrepreneurs",
+      "Message any verified member directly and start real conversations, no middlemen or forms",
   },
   {
-    icon: <Calendar className="w-6 h-6" />,
-    title: "Event Updates",
+    icon: <Briefcase className="w-6 h-6" />,
+    title: "Jobs & Gigs Board",
     description:
-      "Stay informed about upcoming business events, workshops, and meetups in Kolkata",
+      "Post opportunities or apply to freelance gigs and full-time roles shared exclusively within the club",
   },
   {
     icon: <Building2 className="w-6 h-6" />,
-    title: "Business Directory",
+    title: "Service Provider Directory",
     description:
-      "Discover and connect with local businesses and service providers",
+      "Find and hire verified consultants, freelancers, and service providers by category",
   },
   {
-    icon: <Trophy className="w-6 h-6" />,
-    title: "Exclusive Opportunities",
+    icon: <Users className="w-6 h-6" />,
+    title: "Community Timeline",
     description:
-      "Access to funding opportunities, partnerships, and business deals",
+      "Share updates, milestones, and announcements with the whole club in one shared feed",
   },
 ];
 
@@ -90,7 +91,7 @@ const FeaturesSection = ({
       <div className="section-grid" />
       <div className="glow-orb anim-float-medium w-[500px] h-[500px] -top-64 -right-40 opacity-40" />
       <div className="container relative mx-auto px-4">
-        <div className="text-center mb-16">
+        <Reveal className="text-center mb-16">
           <span className="tag-pill mb-5">Features</span>
           <h2 className="font-serif text-4xl md:text-5xl font-extrabold text-foreground mt-5 mb-5">
             Why Join Kolkata Business Club?
@@ -99,19 +100,20 @@ const FeaturesSection = ({
             Unlock exclusive benefits and opportunities to grow your business
             network
           </p>
-        </div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <RevealGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <FeatureCard
-              key={index}
-              index={index}
-              icon={feature.icon}
-              title={feature.title}
-              description={feature.description}
-            />
+            <RevealItem key={index}>
+              <FeatureCard
+                index={index}
+                icon={feature.icon}
+                title={feature.title}
+                description={feature.description}
+              />
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </div>
     </section>
   );

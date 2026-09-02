@@ -1,7 +1,10 @@
 import React, { Fragment } from "react";
+import { motion } from "framer-motion";
 import { ArrowRight, Compass } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import homePageBackgroundImage from "/images/homepageImg.webp";
+
+const EASE = [0.16, 1, 0.3, 1] as const;
 
 interface HeroSectionProps {
   title?: string;
@@ -11,16 +14,17 @@ interface HeroSectionProps {
   backgroundImage?: string;
 }
 
+// Qualitative, not fabricated — see AboutSection.tsx for why real numbers aren't used yet.
 const stats = [
-  { value: "500+", label: "Entrepreneurs" },
-  { value: "100+", label: "Businesses" },
-  { value: "20+", label: "Monthly Events" },
+  { value: "Verified", label: "Members Only" },
+  { value: "Kolkata", label: "Home Base" },
+  { value: "Growing", label: "Every Week" },
 ];
 
 const HeroSection = ({
   title = "Kolkata Business Club",
-  subtitle = "Join the waitlist for the exclusive community app for Kolkata entrepreneurs.",
-  ctaText = "Join Waitlist",
+  subtitle = "The exclusive, verified network for Kolkata's entrepreneurs — join now and start connecting.",
+  ctaText = "Get Started",
   onCtaClick = () => { },
   backgroundImage = homePageBackgroundImage,
 }: HeroSectionProps) => {
@@ -41,19 +45,39 @@ const HeroSection = ({
 
       {/* Content */}
       <div className="relative min-h-[720px] max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-center text-center py-24">
-        <span className="tag-pill mb-6 drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]">
+        <motion.span
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: EASE }}
+          className="tag-pill mb-6 drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]"
+        >
           Private Business Network
-        </span>
+        </motion.span>
 
-        <h1 className="font-serif text-5xl md:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight text-white mb-6 drop-shadow-[0_2px_14px_rgba(0,0,0,0.5)]">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.08, ease: EASE }}
+          className="font-serif text-5xl md:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight text-white mb-6 drop-shadow-[0_2px_14px_rgba(0,0,0,0.5)]"
+        >
           {title}
-        </h1>
+        </motion.h1>
 
-        <p className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.16, ease: EASE }}
+          className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
+        >
           {subtitle}
-        </p>
+        </motion.p>
 
-        <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.24, ease: EASE }}
+          className="flex flex-wrap items-center justify-center gap-4 mb-12"
+        >
           <Button
             size="lg"
             className="group bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white px-8 py-6 text-base font-semibold rounded-xl shadow-[0_0_40px_-8px_hsl(var(--primary)/0.6)] transition-all border-0"
@@ -63,19 +87,25 @@ const HeroSection = ({
             <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Button>
 
-          <a href="#how-it-works">
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-2 border-white/30 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:border-white/50 px-8 py-6 text-base font-semibold rounded-xl transition-all"
-            >
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="border-2 border-white/30 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:border-white/50 px-8 py-6 text-base font-semibold rounded-xl transition-all"
+          >
+            <a href="#how-it-works">
               <Compass className="mr-2 h-5 w-5" />
               See How It Works
-            </Button>
-          </a>
-        </div>
+            </a>
+          </Button>
+        </motion.div>
 
-        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.32, ease: EASE }}
+          className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3"
+        >
           {stats.map((stat, index) => (
             <Fragment key={stat.label}>
               <div className="text-left drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]">
@@ -91,7 +121,7 @@ const HeroSection = ({
               )}
             </Fragment>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

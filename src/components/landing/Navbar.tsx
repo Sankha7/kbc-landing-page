@@ -3,9 +3,9 @@ import { Button } from "../ui/button";
 import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import { appAuthUrl } from "@/lib/config";
 
 interface NavbarProps {
-  onRegisterClick?: () => void;
   menuItems?: Array<{
     label: string;
     href: string;
@@ -13,7 +13,6 @@ interface NavbarProps {
 }
 
 const Navbar = ({
-  onRegisterClick = () => {},
   menuItems = [
     { label: "Home", href: "/" },
     { label: "Blogs", href: "/blogs" },
@@ -49,7 +48,7 @@ const Navbar = ({
         <div className="flex items-center justify-between gap-6">
           {/* Logo */}
           <Link to="/" className="block shrink-0">
-           <img src="images/logo.png" alt="KBC Logo" className="w-32" />
+            <img src="/images/logo.png" alt="KBC Logo" className="w-32" />
           </Link>
 
           {/* Desktop pill nav */}
@@ -80,11 +79,21 @@ const Navbar = ({
               ))}
 
             </div>
+            <a
+              href={appAuthUrl("login")}
+              className={`text-sm font-semibold transition-colors mr-4 ${
+                isTransparent
+                  ? "text-white hover:text-accent"
+                  : "text-foreground hover:text-accent"
+              }`}
+            >
+              Login
+            </a>
             <Button
-              onClick={onRegisterClick}
+              asChild
               className="rounded-full h-auto bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white px-6 py-2.5 border-0 transition-all"
             >
-              Join Waitlist
+              <a href={appAuthUrl("signup")}>Get Started</a>
             </Button>
           </div>
 
@@ -117,11 +126,17 @@ const Navbar = ({
                       {item.label}
                     </Link>
                   ))}
+                  <a
+                    href={appAuthUrl("login")}
+                    className="text-foreground hover:text-accent transition-colors font-medium py-2"
+                  >
+                    Login
+                  </a>
                   <Button
-                    onClick={onRegisterClick}
+                    asChild
                     className="rounded-full bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white w-full border-0 transition-all"
                   >
-                    Join Waitlist
+                    <a href={appAuthUrl("signup")}>Get Started</a>
                   </Button>
                 </div>
               </SheetContent>

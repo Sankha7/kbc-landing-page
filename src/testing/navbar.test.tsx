@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
@@ -16,7 +16,7 @@ describe("Navbar", () => {
   it("renders logo and links to home", () => {
     renderNavbar();
 
-    const logo = screen.getByText(/KB/i);
+    const logo = screen.getByAltText(/KBC Logo/i);
     expect(logo).toBeInTheDocument();
 
     const logoLink = logo.closest("a");
@@ -32,16 +32,14 @@ describe("Navbar", () => {
     });
   });
 
-  it("calls onRegisterClick when clicking Join Waitlist (desktop)", async () => {
-    const user = userEvent.setup();
-    const onRegisterClick = vi.fn();
+  it("links Get Started and Login to the real app (desktop)", () => {
+    renderNavbar();
 
-    renderNavbar({ onRegisterClick });
+    const getStarted = screen.getByRole("link", { name: /get started/i });
+    expect(getStarted).toHaveAttribute("href", expect.stringContaining("/auth"));
 
-    const button = screen.getByRole("button", { name: /join waitlist/i });
-    await user.click(button);
-
-    expect(onRegisterClick).toHaveBeenCalledTimes(1);
+    const login = screen.getByRole("link", { name: /^login$/i });
+    expect(login).toHaveAttribute("href", expect.stringContaining("/auth"));
   });
 
   it("opens mobile menu and shows items", async () => {
@@ -56,6 +54,6 @@ describe("Navbar", () => {
     const utils = within(sheetContent);
 
     expect(utils.getByText("Home")).toBeInTheDocument();
-    expect(utils.getByRole("button", { name: "Join Waitlist" })).toBeInTheDocument();
+    expect(utils.getByRole("link", { name: /get started/i })).toBeInTheDocument();
   });
 });

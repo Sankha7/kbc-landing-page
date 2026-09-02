@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Mail, MapPin, Send } from "lucide-react";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
@@ -6,7 +7,8 @@ import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { supabase } from "../../lib/supabase";
+import { API_URL } from "../../lib/config";
+import { Reveal } from "../ui/reveal";
 
 const contactDetails = [
   {
@@ -34,27 +36,34 @@ const ContactSection = () => {
     event.preventDefault();
     setIsSubmitting(true);
     try {
-      const { data: response, error } = await supabase
-        .from("enquiries")
-        .insert([{ name: nameValue, email: emailValue, phone: phoneValue, message: messageValue }])
+      const response = await fetch(`${API_URL}/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: nameValue,
+          email: emailValue,
+          phone: phoneValue,
+          message: messageValue,
+        }),
+      });
 
-        if(error) {
-          toast.error("Error sending message!");
-        }else{
-          toast.success("Message sent successfully! Thank you for reaching out. We'll respond shortly.", {
-            position: "top-center",
-            style: {
-              fontSize: "16px",
-              padding: "15px",
-              width: "280px",
-            },
-          });
+      if (!response.ok) {
+        toast.error("Error sending message!");
+      } else {
+        toast.success("Message sent successfully! Thank you for reaching out. We'll respond shortly.", {
+          position: "top-center",
+          style: {
+            fontSize: "16px",
+            padding: "15px",
+            width: "280px",
+          },
+        });
 
-          setNameValue("");
-          setEmailValue("");
-          setPhoneValue("");
-          setMessageValue("");
-        }
+        setNameValue("");
+        setEmailValue("");
+        setPhoneValue("");
+        setMessageValue("");
+      }
 
     } catch (error) {
       toast.error("Error sending message!");
@@ -69,7 +78,7 @@ const ContactSection = () => {
       <div className="section-grid" />
       <div className="glow-orb anim-float-slow w-[500px] h-[500px] -top-64 -right-40 opacity-30" />
       <div className="container relative mx-auto px-4">
-        <div className="text-center mb-16">
+        <Reveal className="text-center mb-16">
           <span className="tag-pill mb-5">Contact Us</span>
           <h1 className="font-serif text-4xl md:text-5xl font-extrabold text-foreground mt-5 mb-5">
             Get in Touch
@@ -78,9 +87,9 @@ const ContactSection = () => {
             Have a question, feedback, or just want to say hi? Fill out the
             form below and we'll get back to you as soon as possible.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 max-w-5xl mx-auto">
+        <Reveal className="grid grid-cols-1 lg:grid-cols-5 gap-10 max-w-5xl mx-auto" delay={0.1}>
           {/* Contact info */}
           <div className="lg:col-span-2 flex flex-col gap-5">
             {contactDetails.map((detail) => (
@@ -169,17 +178,19 @@ const ContactSection = () => {
                 />
               </div>
 
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                className="group self-start mt-2 bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white px-8 py-6 text-base font-semibold rounded-xl shadow-[0_0_40px_-8px_hsl(var(--primary)/0.6)] transition-all border-0"
-              >
-                {isSubmitting ? "Sending..." : "Send Message"}
-                <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </Button>
+              <motion.div whileTap={{ scale: 0.98 }} className="self-start">
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="group mt-2 bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white px-8 py-6 text-base font-semibold rounded-xl shadow-[0_0_40px_-8px_hsl(var(--primary)/0.6)] transition-all border-0"
+                >
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                  <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </Button>
+              </motion.div>
             </form>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

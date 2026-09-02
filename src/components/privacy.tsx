@@ -40,7 +40,7 @@ const Privacy = () => {
                   <li><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</li>
                   <li><strong>Application</strong> refers to Kolkata Business Club, the software program provided by the Company.</li>
                   <li><strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Kolkata Business Club.</li>
-                  <li><strong>Country</strong> refers to: West Bengal, India</li>
+                  <li><strong>Jurisdiction &amp; Country</strong> refers to: West Bengal, India</li>
                   <li><strong>Device</strong> means any device that can access the Service such as a computer, a cellphone or a digital tablet.</li>
                   <li><strong>Personal Data</strong> is any information that relates to an identified or identifiable individual.</li>
                   <li><strong>Service</strong> refers to the Application.</li>

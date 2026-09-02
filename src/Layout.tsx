@@ -1,36 +1,26 @@
-import React, { useState } from 'react'
-import { Outlet } from "react-router-dom"
+import React from 'react';
+import { Outlet } from "react-router-dom";
 import Navbar from "./components/landing/Navbar";
 import Footer from "./components/landing/Footer";
 import { ToastContainer } from 'react-toastify';
-import RegistrationDialog from "./components/landing/RegistrationDialog";
+import 'react-toastify/dist/ReactToastify.css';
 import TitleUpdater from "./TitleUpdater";
+import { appAuthUrl } from "./lib/config";
 
 function Layout() {
-  const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
-
-  const handleRegistrationClick = () => {
-    setIsRegistrationOpen(true);
-  };
-
   return (
     <>
-    <TitleUpdater />
-    <div className="min-h-screen">
-      <ToastContainer/>
-      <Navbar onRegisterClick={handleRegistrationClick} />
+      <TitleUpdater />
+      <div className="min-h-screen">
+        <ToastContainer position="top-center" autoClose={4000} />
+        <Navbar />
 
-      <Outlet />
+        <Outlet />
 
-      <Footer onCtaClick={handleRegistrationClick} />
-
-      <RegistrationDialog
-        open={isRegistrationOpen}
-        onOpenChange={setIsRegistrationOpen}
-      />
-    </div>
+        <Footer onCtaClick={() => { window.location.href = appAuthUrl("signup"); }} />
+      </div>
     </>
-  )
+  );
 }
 
-export default Layout
+export default Layout;
