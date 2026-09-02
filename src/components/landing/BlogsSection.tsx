@@ -21,12 +21,12 @@ const BlogsSection = () => {
             <RevealItem key={blog.title}>
             <Card
               className="transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer"
+              onClick={() => navigate(`/blogs/${blog.slug}`)}
               >
               <img
                 src={blog.image}
                 alt={blog.title}
                 className="w-full h-48 object-cover rounded-t"
-                onClick={() => navigate(`/blogs/${blog.slug}`)}
               />
               <CardHeader>
                 <h3 className="text-2xl font-semibold">{blog.title}</h3>

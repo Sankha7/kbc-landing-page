@@ -34,17 +34,27 @@ const ContactSection = () => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    const name = nameValue.trim();
+    const email = emailValue.trim();
+    const phone = phoneValue.trim();
+    const message = messageValue.trim();
+
+    if (!name || !email || !message) {
+      toast.error("Please fill in your name, email, and message.");
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+
     setIsSubmitting(true);
     try {
       const response = await fetch(`${API_URL}/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: nameValue,
-          email: emailValue,
-          phone: phoneValue,
-          message: messageValue,
-        }),
+        body: JSON.stringify({ name, email, phone, message }),
       });
 
       if (!response.ok) {

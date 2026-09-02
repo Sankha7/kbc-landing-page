@@ -37,7 +37,10 @@ const HeroSection = ({
         className="absolute inset-0 w-full h-full object-cover"
         loading="eager"
         decoding="async"
-        fetchPriority="high"
+        // @ts-expect-error -- @types/react has camelCase fetchPriority, but through React 18.x
+        // (including 18.3) the runtime doesn't recognize it as a standard DOM prop and warns
+        // unless it's passed lowercase. React 19 adds it to the DOM property whitelist.
+        fetchpriority="high"
       />
       <div className="absolute inset-0 bg-black/55" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
