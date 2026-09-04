@@ -35,36 +35,34 @@ const Footer = ({
   ],
 }: FooterProps) => {
   return (
-    <footer className="glass-section text-muted-foreground overflow-hidden">
-      <div
-        className="absolute inset-x-0 top-0 h-px"
-        style={{
-          background:
-            "linear-gradient(90deg, transparent, hsl(var(--accent) / 0.5), transparent)",
-        }}
-      />
-      <div className="glow-orb w-[500px] h-[500px] -bottom-64 left-1/2 -translate-x-1/2 opacity-20" />
-      <div className="container relative mx-auto px-4 pt-16">
-        {/* CTA band */}
-        <Reveal className="premium-card flex flex-col md:flex-row items-center justify-between gap-6 p-8 md:p-10 mb-16">
-          <div className="text-center md:text-left">
-            <h3 className="font-serif text-2xl md:text-3xl font-extrabold text-foreground mb-2">
-              Ready to grow your network?
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              Join Kolkata Business Club today and start connecting with verified entrepreneurs.
-            </p>
-          </div>
-          <Button
-            size="lg"
-            onClick={onCtaClick}
-            className="group shrink-0 bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white px-8 py-6 text-base font-semibold rounded-xl border-0 transition-all"
-          >
-            Get Started
-            <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </Button>
-        </Reveal>
+    <>
+      {/* CTA band — the one deliberate blue → navy ombré moment before the footer */}
+      <section className="section-cta overflow-hidden">
+        <div className="grain-overlay" />
+        <div className="container relative mx-auto px-4 py-16 md:py-20">
+          <Reveal className="flex flex-col items-center gap-6 text-center md:flex-row md:justify-between md:text-left">
+            <div>
+              <h3 className="font-serif text-2xl md:text-3xl font-extrabold text-white mb-2">
+                Ready to grow your network?
+              </h3>
+              <p className="text-sm text-white/75">
+                Join Kolkata Business Club today and start connecting with verified entrepreneurs.
+              </p>
+            </div>
+            <Button
+              size="lg"
+              onClick={onCtaClick}
+              className="group shrink-0 bg-white text-[#0B1B33] hover:bg-white/90 px-8 py-6 text-base font-semibold rounded-xl border-0 shadow-lg transition-all hover:-translate-y-0.5"
+            >
+              Get Started
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </Reveal>
+        </div>
+      </section>
 
+      <footer className="section-pale text-muted-foreground overflow-hidden">
+      <div className="container relative mx-auto px-4 pt-16">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 pb-16">
           {/* Brand */}
           <div>
@@ -80,7 +78,7 @@ const Footer = ({
                 <a
                   key={index}
                   href={link.href}
-                  className="icon-badge w-10 h-10 hover:text-accent hover:border-accent/50 transition-colors"
+                  className="icon-badge w-10 h-10 hover:text-primary hover:border-primary/50 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={link.name}
@@ -98,22 +96,22 @@ const Footer = ({
             </h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link to="/" className="inline-block hover:text-accent hover:translate-x-1 transition-all duration-200">
+                <Link to="/" className="inline-block hover:text-primary hover:translate-x-1 transition-all duration-200">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="inline-block hover:text-accent hover:translate-x-1 transition-all duration-200">
+                <Link to="/about" className="inline-block hover:text-primary hover:translate-x-1 transition-all duration-200">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/blogs" className="inline-block hover:text-accent hover:translate-x-1 transition-all duration-200">
+                <Link to="/blogs" className="inline-block hover:text-primary hover:translate-x-1 transition-all duration-200">
                   Blogs
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="inline-block hover:text-accent hover:translate-x-1 transition-all duration-200">
+                <Link to="/contact" className="inline-block hover:text-primary hover:translate-x-1 transition-all duration-200">
                   Contact
                 </Link>
               </li>
@@ -129,7 +127,7 @@ const Footer = ({
               <li>
                 <Link
                   to="/privacy-policy"
-                  className="inline-block hover:text-accent hover:translate-x-1 transition-all duration-200"
+                  className="inline-block hover:text-primary hover:translate-x-1 transition-all duration-200"
                 >
                   Privacy Policy
                 </Link>
@@ -137,7 +135,7 @@ const Footer = ({
               <li>
                 <Link
                   to="/delete-account"
-                  className="inline-block hover:text-accent hover:translate-x-1 transition-all duration-200"
+                  className="inline-block hover:text-primary hover:translate-x-1 transition-all duration-200"
                 >
                   Delete Account
                 </Link>
@@ -155,7 +153,7 @@ const Footer = ({
               <li>
                 <a
                   href="mailto:info@kolkatabusinessclub.com"
-                  className="inline-block hover:text-accent hover:translate-x-1 transition-all duration-200"
+                  className="inline-block hover:text-primary hover:translate-x-1 transition-all duration-200"
                 >
                   info@kolkatabusinessclub.com
                 </a>
@@ -171,12 +169,13 @@ const Footer = ({
             © {new Date().getFullYear()} Kolkata Business Club. All rights
             reserved.
           </div>
-          <Link to="/privacy-policy" className="inline-block hover:text-accent transition-colors duration-200">
+          <Link to="/privacy-policy" className="inline-block hover:text-primary transition-colors duration-200">
             Privacy Policy
           </Link>
         </div>
       </div>
-    </footer>
+      </footer>
+    </>
   );
 };
 

@@ -23,7 +23,7 @@ function NotFound() {
         <div className="flex items-center gap-4">
           <Button
             onClick={() => navigate('/')}
-            className="bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white border-0 rounded-xl font-bold py-2.5 px-6 transition-all"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground border-0 rounded-xl font-bold py-2.5 px-6 transition-all"
           >
             Return to Home
           </Button>

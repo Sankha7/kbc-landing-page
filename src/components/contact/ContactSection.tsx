@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Send } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Send } from "lucide-react";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
@@ -12,12 +12,12 @@ import { Reveal } from "../ui/reveal";
 
 const contactDetails = [
   {
-    icon: <MapPin className="w-5 h-5" />,
+    icon: <MapPin className="w-4 h-4" />,
     label: "Location",
     value: "Kolkata, West Bengal, India",
   },
   {
-    icon: <Mail className="w-5 h-5" />,
+    icon: <Mail className="w-4 h-4" />,
     label: "Email",
     value: "info@kolkatabusinessclub.com",
     href: "mailto:info@kolkatabusinessclub.com",
@@ -84,61 +84,57 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="glass-section py-24 overflow-hidden">
-      <div className="section-grid" />
-      <div className="glow-orb anim-float-slow w-[500px] h-[500px] -top-64 -right-40 opacity-30" />
-      <div className="container relative mx-auto px-4">
-        <Reveal className="text-center mb-16">
-          <span className="tag-pill mb-5">Contact Us</span>
-          <h1 className="font-serif text-4xl md:text-5xl font-extrabold text-foreground mt-5 mb-5">
-            Get in Touch
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have a question, feedback, or just want to say hi? Fill out the
-            form below and we'll get back to you as soon as possible.
-          </p>
-        </Reveal>
+    <section className="section-pale overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-12">
+        {/* Left — dark editorial panel with the pitch + contact details */}
+        <div className="section-deep relative flex flex-col justify-between overflow-hidden px-6 py-20 sm:px-10 lg:col-span-5 lg:py-28">
+          <div className="section-grid opacity-20" />
+          <Reveal className="relative" y={18}>
+            <span className="section-label-alt mb-6">Contact Us</span>
+            <h1 className="font-serif text-5xl font-extrabold leading-[1.02] text-white sm:text-6xl">
+              Let's talk business.
+            </h1>
+            <p className="mt-6 max-w-sm leading-relaxed text-white/70">
+              Have a question, feedback, or just want to say hi? Fill out the
+              form and we'll get back to you shortly.
+            </p>
+          </Reveal>
 
-        <Reveal className="grid grid-cols-1 lg:grid-cols-5 gap-10 max-w-5xl mx-auto" delay={0.1}>
-          {/* Contact info */}
-          <div className="lg:col-span-2 flex flex-col gap-5">
-            {contactDetails.map((detail) => (
+          <Reveal className="relative mt-16 space-y-1" delay={0.15} y={18}>
+            {contactDetails.map((detail, index) => (
               <div
                 key={detail.label}
-                className="premium-card flex items-start gap-4 p-6"
+                className={`flex items-center gap-4 py-4 ${
+                  index > 0 ? "border-t border-white/10" : ""
+                }`}
               >
-                <div className="icon-badge w-11 h-11 shrink-0">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-primary">
                   {detail.icon}
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
+                  <p className="text-[11px] uppercase tracking-wider text-white/45">
                     {detail.label}
                   </p>
                   {detail.href ? (
                     <a
                       href={detail.href}
-                      className="font-semibold text-foreground hover:text-accent transition-colors"
+                      className="group inline-flex items-center gap-1.5 font-semibold text-white hover:text-primary transition-colors"
                     >
                       {detail.value}
+                      <ArrowUpRight className="h-3.5 w-3.5 opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0" />
                     </a>
                   ) : (
-                    <p className="font-semibold text-foreground">
-                      {detail.value}
-                    </p>
+                    <p className="font-semibold text-white">{detail.value}</p>
                   )}
                 </div>
               </div>
             ))}
-            <div className="premium-card p-6 flex-1 flex flex-col justify-center">
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Have any questions or need more information? Get in touch
-                with us and we'll be happy to help.
-              </p>
-            </div>
-          </div>
+          </Reveal>
+        </div>
 
-          {/* Form */}
-          <div className="premium-card lg:col-span-3 p-6 sm:p-8">
+        {/* Right — the form, on a plain light surface, full-bleed to the edge */}
+        <div className="flex items-center px-6 py-20 sm:px-10 lg:col-span-7 lg:px-16 lg:py-28">
+          <Reveal className="w-full max-w-xl" delay={0.1} y={18}>
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
               <div className="grid sm:grid-cols-2 gap-5">
                 <div className="space-y-2">
@@ -182,7 +178,7 @@ const ContactSection = () => {
                   id="message"
                   value={messageValue}
                   onChange={(event) => setMessageValue(event.target.value)}
-                  className="h-28"
+                  className="h-36"
                   placeholder="Write your message here"
                   required
                 />
@@ -192,15 +188,15 @@ const ContactSection = () => {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="group mt-2 bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white px-8 py-6 text-base font-semibold rounded-xl shadow-[0_0_40px_-8px_hsl(var(--primary)/0.6)] transition-all border-0"
+                  className="group mt-2 bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-base font-semibold rounded-full shadow-lg shadow-primary/25 transition-all hover:-translate-y-0.5 border-0"
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                   <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </Button>
               </motion.div>
             </form>
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

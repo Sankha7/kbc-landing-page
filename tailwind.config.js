@@ -19,6 +19,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: [
+          '"Inter"',
           '"TeX Gyre Heros"',
           '"Helvetica Neue"',
           "Helvetica",
@@ -28,12 +29,11 @@ module.exports = {
           "sans-serif",
         ],
         serif: [
+          '"Playfair Display"',
           "Archivo",
           '"TeX Gyre Heros"',
-          '"Helvetica Neue"',
-          "Helvetica",
-          "Arial",
-          "sans-serif",
+          "Georgia",
+          "serif",
         ],
       },
       colors: {

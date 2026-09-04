@@ -40,65 +40,81 @@
 
   @layer base {
     :root {
-      --background: 210 40% 98%;
-      --foreground: 222 47% 9%;
+      /* Light mode — airy white / pale blue / soft periwinkle, blue as accent not backdrop */
+      --background: 217 100% 98%;      /* #F7FAFF main page */
+      --foreground: 216 65% 12%;        /* #0B1B33 navy text */
 
       --card: 0 0% 100%;
-      --card-foreground: 222 47% 9%;
+      --card-foreground: 216 65% 12%;
 
       --popover: 0 0% 100%;
-      --popover-foreground: 222 47% 9%;
+      --popover-foreground: 216 65% 12%;
 
-      --primary: 193.8 100% 38%;
+      --primary: 216 84% 45%;           /* #1261D6 */
       --primary-foreground: 0 0% 100%;
 
-      --secondary: 210 40% 95%;
-      --secondary-foreground: 222 47% 9%;
+      --secondary: 217 100% 96%;        /* #EAF2FF pale blue */
+      --secondary-foreground: 216 65% 12%;
 
-      --muted: 210 40% 94%;
-      --muted-foreground: 215 16% 40%;
+      --muted: 220 45% 95%;
+      --muted-foreground: 216 20% 42%;
 
-      --accent: 228.2 85% 54%;
+      --accent: 217 91% 60%;            /* #3B82F6 */
       --accent-foreground: 0 0% 100%;
 
       --destructive: 359 74.7% 45%;
       --destructive-foreground: 0 0% 100%;
 
-      --border: 214 32% 88%;
-      --input: 214 32% 91%;
-      --ring: 193.8 100% 38%;
+      --border: 217 40% 89%;
+      --input: 217 40% 91%;
+      --ring: 216 84% 45%;
 
-      --radius: 0.5rem;
+      /* Section surfaces — the source of visual rhythm; sections alternate between these */
+      --surface-white: 0 0% 100%;       /* #FFFFFF */
+      --surface-pale: 217 100% 96%;     /* #EAF2FF */
+      --surface-periwinkle: 233 100% 97%; /* #EEF0FF */
+      --surface-deep-1: 212 74% 11%;    /* #071A2F deep navy — hero / cta accent only */
+      --surface-deep-2: 213 74% 15%;    /* #0A2342 navy blue — cta accent only */
+
+      --radius: 0.85rem;
     }
 
     .dark {
-      --background: 240 100% 0.2%;
-      --foreground: 210 50% 97.6%;
+      /* Dark mode — layered navy/blue-gray surfaces, not one flat background everywhere */
+      --background: 213 74% 15%;        /* #0A2342 navy blue — the page floor, not deep navy */
+      --foreground: 216 33% 97%;        /* #F5F7FA soft off-white */
 
-      --card: 216 100% 1%;
-      --card-foreground: 210 50% 97.6%;
+      --card: 213 40% 23%;              /* lighter blue-gray panel, reads on any section surface */
+      --card-foreground: 216 33% 97%;
 
-      --popover: 216 100% 1%;
-      --popover-foreground: 210 50% 97.6%;
+      --popover: 213 45% 18%;
+      --popover-foreground: 216 33% 97%;
 
-      --primary: 193.8 100% 46.1%;
-      --primary-foreground: 240 100% 0.2%;
+      --primary: 217 88% 60%;
+      --primary-foreground: 0 0% 100%;
 
-      --secondary: 213.8 72.7% 4.3%;
-      --secondary-foreground: 210 50% 97.6%;
+      --secondary: 213 52% 18%;         /* #162B45 blue-gray */
+      --secondary-foreground: 216 33% 97%;
 
-      --muted: 218.2 73.3% 2.9%;
-      --muted-foreground: 210 12.4% 65.1%;
+      --muted: 213 45% 17%;
+      --muted-foreground: 214 22% 70%;
 
-      --accent: 228.2 100% 69.2%;
-      --accent-foreground: 210 50% 97.6%;
+      --accent: 231 73% 67%;            /* #6D7FE8 periwinkle — optional accent, used sparingly */
+      --accent-foreground: 0 0% 100%;
 
-      --destructive: 359 74.7% 50.4%;
+      --destructive: 359 74.7% 55%;
       --destructive-foreground: 210 40% 98%;
 
-      --border: 211.6 51.4% 7.3%;
-      --input: 218.2 73.3% 2.9%;
-      --ring: 193.8 100% 46.1%;
+      --border: 213 38% 26%;
+      --input: 213 38% 22%;
+      --ring: 217 91% 62%;
+
+      /* Section surfaces — deliberately different tones, not shades of the same navy */
+      --surface-white: 213 52% 18%;     /* #162B45 blue-gray — stands in for "white" sections */
+      --surface-pale: 222 42% 19%;      /* periwinkle-leaning navy — stands in for "pale blue" */
+      --surface-periwinkle: 222 42% 19%;
+      --surface-deep-1: 212 74% 11%;    /* #071A2F deep navy */
+      --surface-deep-2: 213 74% 15%;    /* #0A2342 navy blue (== page floor) */
     }
   }
 
@@ -107,19 +123,25 @@
       @apply border-border;
     }
     body {
-      @apply text-foreground;
+      @apply text-foreground font-sans antialiased;
       background-color: hsl(var(--background));
-      background-attachment: fixed;
-      background-image:
-        radial-gradient(circle at 10% 15%, hsl(var(--accent) / 0.40) 0%, transparent 45%),
-        radial-gradient(circle at 90% 10%, hsl(var(--primary) / 0.35) 0%, transparent 45%),
-        radial-gradient(circle at 20% 90%, hsl(var(--primary) / 0.32) 0%, transparent 48%),
-        radial-gradient(circle at 95% 85%, hsl(var(--accent) / 0.35) 0%, transparent 45%),
-        radial-gradient(circle at 50% 50%, hsl(var(--accent) / 0.18) 0%, transparent 60%);
     }
     html {
+      scroll-behavior: smooth;
       scrollbar-width: thin;
-      scrollbar-color: hsl(var(--accent) / 0.3) transparent;
+      scrollbar-color: hsl(var(--primary) / 0.35) transparent;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
     }
     ::-webkit-scrollbar {
       width: 8px;
@@ -129,84 +151,178 @@
       background: transparent;
     }
     ::-webkit-scrollbar-thumb {
-      background: hsl(var(--accent) / 0.2);
+      background: hsl(var(--primary) / 0.25);
       border-radius: 9999px;
       border: 2px solid transparent;
       background-clip: padding-box;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: hsl(var(--accent) / 0.4);
+      background: hsl(var(--primary) / 0.45);
+    }
+    :focus-visible {
+      outline: 2px solid hsl(var(--ring));
+      outline-offset: 2px;
     }
   }
 
   @layer components {
-    .premium-card {
-      @apply relative rounded-2xl border border-white/10 bg-card/15 backdrop-blur-3xl backdrop-saturate-150 transition-all duration-300 ease-out;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 2px rgba(0, 0, 0, 0.04), 0 12px 40px -12px rgba(0, 0, 0, 0.4);
+    /* Editorial section label — small tracked caps beside a short rule, not a pill */
+    .section-label {
+      @apply inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary;
     }
-    .premium-card::before {
+    .section-label::before {
       content: "";
-      @apply pointer-events-none absolute inset-x-0 top-0 h-px rounded-t-2xl opacity-0 transition-opacity duration-300;
-      background: linear-gradient(90deg, transparent, hsl(var(--accent) / 0.9), transparent);
+      @apply block h-px w-8 bg-primary/50;
+    }
+    .section-label-alt {
+      @apply inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/70;
+    }
+    .section-label-alt::before {
+      content: "";
+      @apply block h-px w-8 bg-white/40;
+    }
+
+    /* Editorial bento tile — restrained hover, no uniform lift-everything */
+    .bento-tile {
+      @apply relative flex flex-col justify-between overflow-hidden rounded-lg border border-border bg-card p-6 sm:p-7 transition-all duration-500 ease-out;
+    }
+    .bento-tile:hover {
+      @apply border-primary/35;
+      box-shadow: 0 24px 48px -28px hsl(var(--primary) / 0.35);
+    }
+    .dark .bento-tile:hover {
+      box-shadow: 0 24px 48px -24px hsl(var(--primary) / 0.4);
+    }
+
+    /* Thin gradient divider used between editorial blocks */
+    .divider-thin {
+      @apply h-px w-full;
+      background: linear-gradient(90deg, transparent, hsl(var(--border)), transparent);
+    }
+    .divider-thin-alt {
+      @apply h-px w-full;
+      background: linear-gradient(90deg, transparent, hsl(0 0% 100% / 0.15), transparent);
+    }
+
+    /* Floating membership-card mockup used in the hero */
+    .member-card {
+      @apply relative rounded-2xl border border-white/15 p-6 text-white;
+      background: linear-gradient(155deg, #0e2a52 0%, #0a1f3d 55%, #071831 100%);
+      box-shadow: 0 40px 80px -24px rgba(2, 8, 20, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    /* Outlined oversized numerals — dark sections only */
+    .text-outline {
+      -webkit-text-stroke: 1px hsl(var(--primary) / 0.4);
+      color: transparent;
+    }
+
+    /* Very restrained grain, for texture on large dark/photo surfaces only */
+    .grain-overlay {
+      @apply pointer-events-none absolute inset-0 opacity-[0.05] mix-blend-overlay;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* Base surface for elevated content — thin border, soft shadow, no glass by default */
+    .premium-card {
+      @apply relative rounded-2xl border border-border bg-card transition-all duration-300 ease-out;
+      box-shadow: 0 1px 2px rgba(6, 19, 38, 0.04), 0 8px 24px -12px rgba(6, 19, 38, 0.12);
+    }
+    .dark .premium-card {
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), 0 8px 28px -12px rgba(0, 0, 0, 0.55);
     }
     .premium-card:hover {
-      @apply border-accent/50 -translate-y-1.5;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.20), 0 0 0 1px hsl(var(--accent) / 0.2), 0 0 50px -8px hsl(var(--accent) / 0.5), 0 30px 60px -20px rgba(0, 0, 0, 0.85);
+      @apply border-primary/40 -translate-y-1;
+      box-shadow: 0 1px 2px rgba(6, 19, 38, 0.04), 0 16px 36px -14px hsl(var(--primary) / 0.28);
     }
-    .premium-card:hover::before {
-      @apply opacity-100;
+    .dark .premium-card:hover {
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 16px 40px -14px hsl(var(--primary) / 0.35);
     }
-    .glass-section {
-      @apply relative bg-background/25 backdrop-blur-2xl backdrop-saturate-150 border-b border-white/5;
+
+    /* Section surfaces — each section in the page rhythm picks one of these, never the
+       same tone twice in a row. Light mode alternates white/pale-blue/periwinkle; dark
+       mode alternates distinct navy/blue-gray tones instead of one flat background. */
+    .section-pale {
+      @apply relative bg-background border-b border-border/60;
     }
-    .glass-section-dark {
-      @apply relative bg-[#0A2558]/35 backdrop-blur-2xl backdrop-saturate-150 border-y border-white/10;
+    .section-white {
+      @apply relative border-b border-border/60;
+      background: hsl(var(--surface-white));
     }
+    .section-soft {
+      @apply relative border-b border-border/60;
+      background: linear-gradient(180deg, hsl(var(--surface-pale)), hsl(var(--surface-white)) 130%);
+    }
+    .dark .section-soft {
+      background: linear-gradient(180deg, hsl(var(--surface-pale)), hsl(var(--background)) 130%);
+    }
+    .section-periwinkle {
+      @apply relative border-b border-border/60;
+      background: hsl(var(--surface-periwinkle));
+    }
+    /* The one deliberately dramatic dark band — deep navy ombré, used sparingly (hero + one
+       "network" section + the closing CTA), never the whole page. */
+    .section-deep {
+      @apply relative border-y border-white/5 text-white;
+      background: linear-gradient(165deg, hsl(var(--surface-deep-2)) 0%, hsl(var(--surface-deep-1)) 100%);
+    }
+    .section-cta {
+      @apply relative text-white;
+      background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--surface-deep-2)) 65%, hsl(var(--surface-deep-1)) 100%);
+    }
+
     .glass-input-field {
-      @apply flex w-full rounded-xl border border-white/10 bg-background/30 backdrop-blur-md px-4 py-3 text-sm text-foreground shadow-sm placeholder:text-muted-foreground/60 transition-all duration-300 focus-visible:outline-none focus-visible:border-accent focus-visible:ring-1 focus-visible:ring-accent/30 focus-visible:bg-background/50 disabled:cursor-not-allowed disabled:opacity-50;
-      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+      @apply flex w-full rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground shadow-sm placeholder:text-muted-foreground/60 transition-all duration-200 focus-visible:outline-none focus-visible:border-primary focus-visible:ring-1 focus-visible:ring-primary/30 disabled:cursor-not-allowed disabled:opacity-50;
     }
+
+    /* Neutral chip, blue icon — the brand color reads as an accent inside the badge,
+       not as another blue fill stacked on an already-tinted card. */
     .icon-badge {
-      @apply inline-flex items-center justify-center rounded-full border-2 border-accent/30 text-accent transition-all duration-300 ease-out;
-      background: linear-gradient(135deg, hsl(var(--accent) / 0.18), hsl(var(--accent) / 0.05));
-      box-shadow: inset 0 1px 1px hsl(var(--accent) / 0.15);
+      @apply inline-flex items-center justify-center rounded-xl border border-border text-primary transition-all duration-300 ease-out;
+      background: hsl(var(--muted) / 0.7);
     }
     .icon-badge:hover,
     .group:hover .icon-badge {
-      @apply border-accent/60 scale-110;
-      box-shadow: inset 0 1px 1px hsl(var(--accent) / 0.25), 0 0 20px -4px hsl(var(--accent) / 0.55);
+      @apply border-primary/35 scale-105;
+      background: hsl(var(--primary) / 0.12);
     }
+
     .tag-pill {
-      @apply inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 backdrop-blur-md px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-accent/90 transition-all duration-300;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+      @apply inline-flex items-center gap-1.5 rounded-full border border-border bg-muted/60 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground;
     }
+    .dark .tag-pill {
+      @apply border-border bg-muted/50 text-muted-foreground;
+    }
+
+    /* Restrained decorative glow — small, low-opacity, used sparingly */
     .glow-orb {
-      @apply pointer-events-none absolute rounded-full blur-3xl;
-      background: radial-gradient(circle, hsl(var(--accent) / 0.35) 0%, transparent 70%);
+      @apply pointer-events-none absolute rounded-full blur-3xl opacity-30;
+      background: radial-gradient(circle, hsl(var(--primary) / 0.25) 0%, transparent 70%);
     }
     .anim-float-slow {
-      animation: float-slow 15s ease-in-out infinite;
+      animation: float-slow 18s ease-in-out infinite;
     }
     .anim-float-medium {
-      animation: float-medium 10s ease-in-out infinite;
+      animation: float-medium 13s ease-in-out infinite;
     }
+
     .section-grid {
-      @apply pointer-events-none absolute inset-0;
+      @apply pointer-events-none absolute inset-0 opacity-[0.35];
       background-image:
         linear-gradient(hsl(var(--border)) 1px, transparent 1px),
         linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px);
-      background-size: 48px 48px;
-      -webkit-mask-image: radial-gradient(ellipse 70% 55% at 50% 0%, black 40%, transparent 100%);
-      mask-image: radial-gradient(ellipse 70% 55% at 50% 0%, black 40%, transparent 100%);
-      opacity: 0.5;
+      background-size: 56px 56px;
+      -webkit-mask-image: radial-gradient(ellipse 70% 55% at 50% 0%, black 30%, transparent 100%);
+      mask-image: radial-gradient(ellipse 70% 55% at 50% 0%, black 30%, transparent 100%);
     }
     .section-dots {
-      @apply pointer-events-none absolute inset-0;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.35) 1.5px, transparent 1.5px);
-      background-size: 22px 22px;
-      -webkit-mask-image: radial-gradient(ellipse 85% 85% at 50% 25%, black 30%, transparent 100%);
-      mask-image: radial-gradient(ellipse 85% 85% at 50% 25%, black 30%, transparent 100%);
+      @apply pointer-events-none absolute inset-0 opacity-40;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.25) 1.5px, transparent 1.5px);
+      background-size: 24px 24px;
+      -webkit-mask-image: radial-gradient(ellipse 85% 85% at 50% 25%, black 25%, transparent 100%);
+      mask-image: radial-gradient(ellipse 85% 85% at 50% 25%, black 25%, transparent 100%);
     }
+
     .no-scrollbar {
       -ms-overflow-style: none;
       scrollbar-width: none;
@@ -236,7 +352,7 @@
       transform: translateY(0px) scale(1);
     }
     50% {
-      transform: translateY(-20px) scale(1.05);
+      transform: translateY(-18px) scale(1.04);
     }
   }
 
@@ -245,6 +361,6 @@
       transform: translateY(0px) scale(1);
     }
     50% {
-      transform: translateY(15px) scale(0.95);
+      transform: translateY(14px) scale(0.96);
     }
   }

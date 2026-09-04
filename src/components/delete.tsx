@@ -89,7 +89,7 @@ const DeleteAccount = () => {
               Need assistance? Email us at{" "}
               <a
                 href="mailto:info@kolkatabusinessclub.com"
-                className="text-accent underline"
+                className="text-primary underline"
               >
                 info@kolkatabusinessclub.com
               </a>

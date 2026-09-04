@@ -31,7 +31,7 @@ function BlogDetails() {
           <p className="text-xl text-muted-foreground mb-12">The blog you are looking for does not exist.</p>
           <button
             onClick={handleBack}
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary to-accent text-white rounded-xl hover:opacity-90 transition-all"
+            className="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl transition-all"
           >
             <ArrowLeft className="w-6 h-6 mr-3" />
             Go Back to Blogs
@@ -131,7 +131,7 @@ function BlogDetails() {
         {/* Most Popular Blogs Section */}
         <div className="mt-12">
           <div className="flex items-center mb-6">
-            <TrendingUp className="w-6 h-6 text-accent mr-3" />
+            <TrendingUp className="w-6 h-6 text-primary mr-3" />
             <h2 className="text-2xl font-bold text-foreground">Most Popular Blogs</h2>
           </div>
           
@@ -151,7 +151,7 @@ function BlogDetails() {
                     <span className="text-xs text-muted-foreground">{blog.date}</span>
                     <button 
                       onClick={() => navigate(`/blogs/${blog.slug}`)}
-                      className="text-primary hover:text-accent text-sm font-medium"
+                      className="text-primary hover:text-primary/70 text-sm font-medium"
                     >
                       Read More
                     </button>

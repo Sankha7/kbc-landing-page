@@ -11,7 +11,7 @@ const BlogsSection = () => {
   const blogData = getBlogData();
 
   return (
-    <section className="glass-section py-20 mt-10">
+    <section className="section-pale py-20 mt-10">
       <div className="container mx-auto px-4">
         <Reveal>
           <h1 className="text-4xl font-bold mb-10">Blogs</h1>
@@ -41,7 +41,7 @@ const BlogsSection = () => {
               <CardContent>{blog.description} ...</CardContent>
               <div className="flex items-center justify-end p-3">
                 <Button
-                  className="group mt-4 bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white border-0 rounded-xl shadow-[0_0_20px_-8px_hsl(var(--primary)/0.6)] transition-all"
+                  className="group mt-4 bg-primary hover:bg-primary/90 text-primary-foreground border-0 rounded-xl shadow-md shadow-primary/20 transition-all hover:-translate-y-0.5"
                   onClick={(e) => {
                     e.stopPropagation();
                     navigate(`/blogs/${blog.slug}`)
